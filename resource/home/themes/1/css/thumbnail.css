@@ -1,0 +1,275 @@
+@CHARSET "GB18030";
+.restaurant-block {
+	width:125px;
+	overflow:hidden
+}
+.restaurant-block a {
+	color:#333
+}
+.restaurant-block a:hover {
+	color:#0088c8
+}
+.restaurant-block:hover {
+	background:#f8f8f8
+}
+.restaurant-block:hover a {
+	color:#0088c8
+}
+.restaurant-block.hover {
+	box-shadow:0 3px 5px 2px rgba(0,0,0,0.3);
+	background:#f8f8f8;
+	position:absolute;
+	z-index:99;
+	margin-top:-97px;
+	border:1px solid #c6c6c6;
+	margin-left:-1px
+}
+.restaurant-block .favor-book {
+	position:relative;
+	margin-left:115px;
+	text-align:right
+}
+.restaurant-block .favor-book .favor-icon {
+	height:22px;
+	width:20px;
+	position:absolute;
+	top:0;
+	left:54px
+}
+.restaurant-block .favor-book .book-icon {
+	background:#fff3d8;
+	width:17px;
+	padding:3px 0 5px 3px;
+	color:#ff6800;
+	box-shadow:0 1px 2px rgba(0,0,0,0.3);
+	display:block;
+	position:absolute;
+	top:0;
+	left:0
+}
+.restaurant-block .favor-book a {
+	color:#999;
+	position:absolute;
+	top:67px;
+	line-height:13px;
+	width:50px;
+	padding:1px 0 0 15px
+}
+.restaurant-block .favor-book a:hover {
+	color:#0088c8
+}
+.restaurant-block .favor-book .hover-add-favor {
+	right:10px;
+	width:27px
+}
+.restaurant-block .favor-book .hover-un-favor {
+	right:10px;
+	width:53px
+}
+.restaurant-block.favored,.restaurant-block.lite {
+	height:auto;
+	cursor:pointer
+}
+.restaurant-block .line-one {
+	vertical-align:top;
+	overflow:hidden
+}
+.restaurant-block .line-one .logo-wrapper {
+	float:left;
+	margin-left:5px;
+	line-height:15px
+}
+.restaurant-block .line-one .logo-wrapper .logo {
+	height:90px;
+	width:112px;
+	padding:1px;
+	position:relative
+}
+.restaurant-block .line-one .logo-wrapper .logo.premium {
+	border-color:transparent
+}
+.restaurant-block .line-one .logo-wrapper .logo img {
+	height:92px;
+	width:108px
+}
+.restaurant-block .line-one .logo-wrapper .logo .phone-logo {
+	position:absolute;
+	z-index:5;
+	top:27px;
+	left:29px;
+	width:112px;
+	height:88px
+}
+.restaurant-block .line-one .logo-wrapper .deliver-time-wrapper {
+	line-height:14px;
+	color:#666;
+	font-size:10px;
+	margin-top:8px;
+	padding-top:2px;
+	height:16px;
+	text-align:center
+}
+
+.restaurant-block .line-one .info {
+	float:left;
+	margin-left:8px;
+	margin-right:7px;
+	width:118px;
+	overflow:hidden
+}
+.restaurant-block .line-one .info .name {
+	font-size:15px;
+	color:#333;
+	height:18px;
+	overflow:hidden
+}
+.restaurant-block .line-one .info .flavors {
+	color:#666;
+	font-size:12px;
+	float:left;
+	line-height:100%;
+	min-width:10px;
+	height:12px;
+	margin-top:4px
+}
+.restaurant-block .line-one .info .flavors .ratings {
+	font-size:12px;
+	margin-left:5px
+}
+.restaurant-block .line-one .info .flavors.three-line {
+	margin-top:14px
+}
+.restaurant-block .line-one .info .ratings {
+	color:#666;
+	font-size:12px;
+	margin-top:4px;
+	float:left;
+	width:100%
+}
+.restaurant-block .line-one .info .ratings .rating-star {
+	float:left
+}
+.restaurant-block .line-one .info .ratings .rating-number {
+	line-height:14px;
+	float:left;
+	margin-left:3px;
+	font-size:12px;
+	color:#999
+}
+.restaurant-block .line-one .info .ratings.three-line {
+	margin-top:13px
+}
+.restaurant-block .line-one .info .status-label {
+	float:left;
+	width:100%;
+	margin-top:9px;
+	height:20px
+}
+.restaurant-block .line-one .info .status-label.book span {
+	color:#59b170;
+	background:#f8f8ee;
+	border:1px solid #59b170;
+	padding:2px 4px;
+	font-size:12px
+}
+.restaurant-block .line-one .info .status-label.closed span {
+	color:#999;
+	background:#f5f5f5;
+	border:1px solid #ddd;
+	padding:2px 4px;
+	font-size:12px
+}
+.restaurant-block .line-one .info .status-desc {
+	line-height:14px;
+	float:left;
+	font-size:12px;
+	width:100%;
+	margin-top:11px
+}
+.restaurant-block .line-one .info .status-desc.closed span {
+	color:#999
+}
+.restaurant-block .line-one .info .status-desc.book span {
+	color:#999
+}
+.restaurant-block .line-one .info .icons {
+	float:left;
+	width:100%
+}
+.restaurant-block .line-one .info .icons .deliver-time {
+	margin-top:4px;
+	font-size:10px;
+	width:38px;
+	padding-left:2px;
+	line-height:100%;
+	color:#fff;
+	font-size:11px
+}
+.restaurant-block .line-one .info .icons .restaurant-icons {
+	margin-top:4px
+}
+.restaurant-block .line-favor-btn {
+	position:relative;
+	font-size:12px;
+	text-align:right;
+	width:63px;
+	margin-left:67px
+}
+.restaurant-block .line-favor-btn a {
+	color:#999;
+	position:absolute;
+	top:67px;
+	line-height:14px;
+	width:50px;
+	padding:1px 0 0 15px
+}
+.restaurant-block .line-favor-btn a:hover {
+	color:#0088c8
+}
+.restaurant-block.closed a {
+	color:#999
+}
+.restaurant-block.closed:hover {
+	background:#f8f8f8
+}
+.restaurant-block.closed .line-one .info .name,.restaurant-block.closed .line-one .info .flavors {
+	color:#999
+}
+.restaurant-block.closed .line-one .logo-wrapper .deliver-time-wrapper {
+	color:#999
+}
+.restaurant-block.closed .logo img {
+	opacity:.5
+}
+.restaurant-block.closed:hover a {
+	color:#0088c8
+}
+.restaurant-block.closed:hover .line-favor-btn a {
+	color:#999
+}
+.restaurant-block.closed:hover .line-favor-btn a:hover {
+	color:#0088c8
+}
+.restaurant-block.book:hover {
+	background:#f8f8f8
+}
+.restaurant-block .add-favor {
+	height:92px;
+	border-left:1px solid white;
+	border-right:1px solid white;
+	margin:0;
+	text-align:left;
+	padding-top:0
+}
+.restaurant-block .delete-action {
+    margin-left: 113px;
+    margin-top: -121px;
+    position: absolute;
+}
+.eleme-icon.delete{background: url("../images/apply_thumbnail_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 20px;
+    width: 14px;}
+.eleme-icon.delete:hover {
+    background: url("../images/apply_thumbnail_close.png") no-repeat scroll -148px 0 rgba(0, 0, 0, 0);
+}

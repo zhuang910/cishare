@@ -1,0 +1,415 @@
+@charset "utf-8";
+/* CSS Document */
+.applyMain{ width:1024px; margin:0 auto; overflow:hidden; clear:both; border:1px solid #D8D8D8;}
+
+/*步骤*/
+.appStep{ height:49px; line-height:49px; overflow:hidden; clear:both;}
+.appStep1{ background:url(../images/apply/step.png) no-repeat 0 0;}
+.appStep2{ background:url(../images/apply/step.png) no-repeat 0 -49px;}
+.appStep3{ background:url(../images/apply/step.png) no-repeat 0 -98px;}
+.appStep4{ background:url(../images/apply/step.png) no-repeat 0 -147px;}
+
+.appStepA{ float:left; display:inline-block; float:left; font-size:16px; font-weight:normal; color:#333;}
+.appStepA strong{ float:left; display:inline-block; margin:0 5px 0 0; width:25px; text-align:center; background:url(../images/apply/icon1.png) no-repeat 0 -214px; color:#FFF;}
+.appStepA img{ float:left; display:inline-block; margin:17px 0 0 10px;}
+.appStepA span{ float:left; display:inline-block;}
+
+.appStepA1{ width:265px; padding-left:30px;}
+.appStepA2{ width:295px; padding-left:50px;}
+.appStepA3{ width:250px; padding-left:50px;}
+.appStepA4{ width:212px; padding-left:30px;}
+
+.appStepAc{ color:#FFF;}
+.appStepAc:hover{ color:#FFF;}
+
+
+
+/*说明*/
+.appExplain{ padding:10px 20px; overflow:hidden; clear:both; border:1px solid #F4E4B3; background:#FEFFF1;}
+.appExplain p{ line-height:18px;}
+
+
+.appStepBox{ overflow:hidden; clear:both; padding:20px 20px 40px; position:relative;}
+
+/*左侧nav*/
+.appNav{ width:242px; float:left;/* position:absolute; top:100px; left:20px*/}
+.appNavLine{ display:block; height:0px; line-height:0px; overflow:hidden; clear:both; border-bottom:1px solid #D7D7D7; _margin-bottom:-4px;}
+.appNavLineF{ border-top:2px solid #D7D7D7;}
+.appNavA a{ display:block; width:242px; padding:0 10px; height:40px; line-height:40px; clear:both; color:#333; border-left:2px solid #D7D7D7; border-right:2px solid #D7D7D7;}
+.appNavA a:hover{ color:#0A74B9; background:#F6F6F6;}
+.appNavA a.appNavAc{ width:260px; border-right:none; background:url(../images/apply/icon1.png) no-repeat 239px -624px #F6F6F6;}
+.appNavA a.appNavAc img{ margin:13px 19px 0 0;}
+
+.appNavA a span{ float:left;}
+.appNavA a img{ float:right; display:inline-block; margin:13px 0 0;}
+
+.appNavExplain{ width:242px; padding:20px 10px; background:#F6F6F6; border:2px solid #D7D7D7; border-top:none;}
+.appNavExplain h2{ font-size:14px; font-weight:bold;}
+.appNavExplain h3{ line-height:24px;}
+.appNavExplain h3 img{ float:left; display:inline-blocks; margin:6px 5px 0 0;}
+
+
+/*右侧appInfoBox*/
+.appInfoBox{ width:710px; float:right;position:relative; }
+.appInfoTitle{ height:35px; line-height:35px; padding:0 30px; margin:0 0 10px; font-size:18px; cursor:pointer; background:url(../images/apply/icon1.png) no-repeat 660px -722px #E3E3E3; border-bottom:5px solid #BDBDBD;}
+.appInfoTSelect{ background:url(../images/apply/icon1.png) no-repeat 660px -670px #E3E3E3;}
+
+.appInfoContent{ background:#F9F9F9; padding:30px 40px; margin:-10px 0 10px;}
+.appInfoH2{ font-size:18px; color:#1570a6;}
+
+.apply_form li{ overflow:hidden; clear:both;margin:0px 0px 25px 0px;position:relative; }
+.apply_form li .appFormr{float:left;margin:0px 5px 0 0;color:red;width:10px;}
+.apply_form li .FormText{ width:290px; float:inherit; display:block; margin-bottom:0;}
+.apply_form li .mustvalue{ float:left; margin:0 10px 0 0px;}
+.apply_form li .RFormError{ position:absolute;left:335px;top:0px;width:150px;}
+.apply_form li .form-group{ margin:0px 10px 0 0px;float:left;position:relative; }
+.apply_form li .form-group .col-sm-2{width:auto;}
+.apply_form li .form-group .control-label{text-align:left;padding:0px;font-weight:normal;float:left;display:inline-block;height:25px;}
+.apply_form li .form-group .checkbox{width:auto;float:left; line-height:18px; padding:0px 10px 0 0px;}
+.apply_form li .form-group .checkbox{margin:0 0 0 10px;display:inline-block;}
+.apply_form li .form-group .checkbox input{padding:0px 0 0 0;vertical-align:middle;margin:0px;}
+.appInfoH2{margin:0 0 10px 10px;}
+.apply_form li .appFormEx{float:left;}
+.apply_form li .FormText{float:left;}
+.apply_form li .Formselect{float:left;margin:0 0 0 11px;}
+.apply_form li .Formredio{float:left;font-weight:normal;margin:0 10px 0 11px;}
+.apply_form li .redio{margin:0 3px 0 0;}
+.apply_form li .appFormExtit{clear:right;display:block;font-weight:bold;}
+.apply_form li .error{float:left;}
+.apply_form li .RFormQues{float:left;margin:0 0 0 15px;}
+.apply_form li .RFormdes{display:block;clear:left;width:100%;margin-left:11px;color:#999;}
+.apply_form li .red{float:left; margin:0 10px 0 0px;}
+.appFormEx{margin: 0px 5px 0 0;color:#333; font-weight:bold;}
+#controlid_5016 select{ display:block; margin-bottom:0; width:290px;}
+#controlid_25568 select{ display:block; margin-bottom:0; width:290px;}
+#controlid_ select{ display:block; margin-bottom:0; width:290px;}
+#controlid_19294 select{ display:block; margin-bottom:0; width:290px;}
+
+.AppBtnTab{ width:100%;}
+.AppBtnTab th{ text-align:right;}
+
+.appBtnSN{ display:inline-block; width:92px; height:36px; line-height:36px; text-align:center; font-size:18px; font-weight:bolder; color:#FFF; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0 -85px;}
+.appBtnSN:hover{ background:url(../images/apply/btn.png) no-repeat -139px -85px;}
+
+.appBtnCC{ display:inline-block; width:250px; height:36px; line-height:36px; text-align:center; font-size:18px; font-weight:bolder; color:#FFF; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0 -375px;}
+.appBtnCC:hover{ background:url(../images/apply/btn.png) no-repeat 0px -411px;}
+
+/*apply 2*/
+.AddInfoBox{ float:left; width:690px;}
+.appInfoAdd{ padding:30px 20px; background:#F6F6F6;}
+
+.FilePicList{ overflow:hidden; clear:both; position:relative; border:2px solid #E4E4E4; background:#FFF;}
+.FilePicBg{ display:inline-block; width:14px; height:26px; position:absolute; top:60px; left:360px; background:url(../images/apply/icon1.png) no-repeat 0 -795px;}
+
+.FilePicText{ float:left; width:360px; height:110px; padding:20px;}
+.FilePicText h2{ font-size:16px; margin-bottom:10px; overflow:hidden;}
+.FilePicText h2 span{ float:left; display:inline-block;}
+.FilePicText h2 span.FPTError{ font-size:13px; width:160px; margin:2px 0 0 10px; padding:0 0 0 10px; background:url(../images/apply/btn.png) no-repeat 0 -224px; color:#FFF;}
+.FilePicText p{ line-height:18px;}
+.FilePicText p span{ color:#0A74B9;}
+
+.FilePicUpload{ float:left; width:286px; padding:15px 0 10px 10px; border-left:2px solid #E4E4E4;}
+.FilePicUpload ul{/* margin:20px 0 0 10px;*/}
+.FilePicUpload ul li{ position:relative; float:left; display:inline-block; margin:0 10px 10px 0; width:120px; text-align:center;}
+
+.FPUClose{ display:inline-block; position:absolute; top:0px; right:0px; width:20px; height:20px; cursor:pointer; background:url(../images/apply/icon1.png) no-repeat 0px -850px; padding-left:10px;}
+.FPUClose:hover{ background:url(../images/apply/icon1.png) no-repeat -20px -850px;}
+
+.FPUbar{ display:inline-block; position:absolute; top:85px; left:20px; width:90px; height:10px; background:url(../images/apply/btn.png) no-repeat 0 -252px;}
+.FPUbar10{ background:url(../images/apply/btn.png) no-repeat 0 -272px;}
+.FPUbar20{ background:url(../images/apply/btn.png) no-repeat 0 -282px;}
+.FPUbar30{ background:url(../images/apply/btn.png) no-repeat 0 -292px;}
+.FPUbar40{ background:url(../images/apply/btn.png) no-repeat 0 -302px;}
+.FPUbar50{ background:url(../images/apply/btn.png) no-repeat 0 -312px;}
+.FPUbar60{ background:url(../images/apply/btn.png) no-repeat 0 -322px;}
+.FPUbar70{ background:url(../images/apply/btn.png) no-repeat 0 -332px;}
+.FPUbar80{ background:url(../images/apply/btn.png) no-repeat 0 -342px;}
+.FPUbar90{ background:url(../images/apply/btn.png) no-repeat 0 -352px;}
+.FPUbar100{ background:url(../images/apply/btn.png) no-repeat 0 -362px;}
+
+.FPUploadBtn{ display:block; width:117px; height:93px;}
+.FPUploadBtnR{ background:url(../images/apply/btn.png) no-repeat 0 -126px;margin: 0 0 0 10px;}
+.FPUploadBtnE{ background:url(../images/apply/btn.png) no-repeat -139px -126px;}
+
+.appInfoExplain{ float:right; width:240px; padding:20px; border:2px solid #E4E4E4;}
+.appInfoExplain h3{ margin-bottom:15px; line-height:18px;}
+
+
+/*apply3*/
+.appPayTabA{ width:100%;}
+.appPayTabA th{ font-weight:normal; text-align:left; vertical-align:top; padding:5px 30px; border-bottom:3px solid #B3D4E7; border-left:1px solid #FFF; color:#777;}
+.appPayTabA td{ vertical-align:top; padding:20px 30px; line-height:18px; border-bottom:1px solid #D8E9F3; background:#F7FCFF;}
+.appPayTabA td a{ display:block;}
+.appPayTabA td span.red{ color:#E82312;}
+.appPayTabA td span.blue{ color:#0A74B9;}
+
+.appPayoff{ background:#F6F6F6; padding:0 20px;}
+.appPayoff table{ width:100%;}
+.appPayoff td{ line-height:34px; padding:20px 0;}
+.appPayoff td label{ float:left;}
+.appPayoff td span{ float:left; color:#E82312;}
+.appPayoff td .FormText{ width:320px;}
+.appPayoff td .wayBtn{ float:left;}
+.appPayoff th{ text-align:right; font-weight:normal; padding:20px 0;}
+.appPayoff th span{ color:#E82312;}
+.appPayoff th span.spanF18{ font-size:18px;}
+.appPayoff tr.bor{ border-top:1px solid #DEDEDE;}
+
+.appPayment{ line-height:50px; padding:0 20px; text-align:right; border:1px solid #D8E9F3; background:#F7FCFF;}
+.appPayment strong{ font-size:18px; color:#E82312;}
+
+.appBtnReturn{ display:inline-block; width:175px; height:32px; line-height:32px; text-align:center; color:#0A74B9; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0 -447px;}
+.appBtnReturn:hover{ background:url(../images/apply/btn.png) no-repeat 0 -479px;}
+.appBtnGo{ display:inline-block; width:154px; height:44px; line-height:44px; text-align:center; color:#FFF; font-size:18px; font-weight:bolder; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat -98px -252px;}
+
+
+.appSubBox{ overflow:hidden; clear:both; border:2px solid #DBDBDB; background:#FFF;}
+.appSubText{ width:690px; float:left; background:#F6F6F6;}
+.appSubText p{ font-size:16px;}
+.appSubText p span{ color:#0A74B9;}
+.appSubText table{ background:url(../images/apply/icon1.png) no-repeat 0 -887px;}
+.appSubText table td{ padding:5px 0 5px 25px; line-height:24px;}
+.appSubText table td span{ color:#E82312;}
+.appSubBtn{ float:left; background:url(../images/apply/btn.png) no-repeat -338px 0 #FFF; width:220px; padding:30px 0 30px 30px;}
+.appSubHeight{ height:186px}
+
+.appSubmit{ display:block; width:154px; height:54px; line-height:54px; text-align:center; font-size:24px; font-weight:bolder; border:none; cursor:pointer;}
+.appSubmitA{ background:url(../images/apply/btn.png) no-repeat 0px -511px; color:#FFF;}
+.appSubmitA:hover{ background:url(../images/apply/btn.png) no-repeat -154px -511px;}
+.appSubmitB{ background:url(../images/apply/btn.png) no-repeat 0px -565px; color:#FFF;}
+.appSubmitB:hover{ background:url(../images/apply/btn.png) no-repeat -154px -565px;}
+
+.payStep{ position:relative; width:100%; height:120px;}
+.payStepBg_over{ position:absolute; top:60px; left:465px; width:265px; height:35px; background:url(../images/apply/payStep.png) repeat-x 0 0px; z-index:1;}
+.payStepBg{ position:absolute; top:60px; left:200px; width:565px; height:35px; background:url(../images/apply/payStep.png) repeat-x 0 -93px;}
+.payStepNow{ position:absolute; top:60px; left:200px; width:265px; height:35px; background:url(../images/apply/payStep.png) repeat-x 0 0px; z-index:1;}
+.payStep .p_r1{padding-right:10px;}
+.payStep .p_r2{padding-right:6px;}
+.payStep .p_r3{padding-right:2px;}
+.payyes{text-align:center;font-size:30px;color:red;padding:40px;}
+.paystatus{width:100%;margin:40px auto 60px;}
+
+.payStepList{ position:absolute; top:20px; left:150px; z-index:2;}
+.payStepList li{ text-align:center; width:145px; float:left; display:inline-block; margin:0 118px 0 0;}
+.payStepList li a{ display:block; height:30px; line-height:20px; margin:0 0 15px; font-size:12px; color:#333; text-decoration:none; cursor:pointer;}
+.payStepList li a:hover{ color:#0A74B9;}
+.payStepList li a.active{ background:url(../images/apply/btn.png) no-repeat -99px -344px; color:#FFF;}
+.payStepList li span{ font-size:16px; color:#FFF; font-weight:bolder;}
+
+/*申请完成*/
+.appComplete{ background:#F6F6F6; text-align:center; padding:70px 0;}
+.appComplete p{ font-size:18px; padding:0 0 20px 0;}
+
+.appCsa{ display:inline-block; width:220px; height:38px; line-height:38px; text-align:center; font-size:16px; font-weight:bolder; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0px -619px; color:#FFF;}
+.appCsa:hover{ background:url(../images/apply/btn.png) no-repeat 0px -657px;}
+
+.appCdbh{ display:inline-block; width:180px; height:38px; line-height:38px; text-align:center; font-size:16px; font-weight:bolder; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0px -695px; color:#FFF;}
+.appCdbh:hover{ background:url(../images/apply/btn.png) no-repeat 0px -733px; color:#FFF;}
+
+
+/*准备*/
+.appReady{ width:1024px; margin:0 auto; overflow:hidden; clear:both;}
+
+.appReadyLeft{ float:left; width:756px; height:424px; border:2px solid #0277C4; border-right:none; padding:30px;}
+.appReadyLeft h2{ color:#333333; font-size:22px;margin-bottom:15px;}
+.appReadyLeft h3{ color:#0A74B9; font-size:18px;}
+.appReadyLeft h4{ color:#333333; font-size:18px;}
+.appReadyLtext{ background:#F6F6F6; padding:30px 20px; margin:20px 0;}
+.appReadyLtext li{ background:url(../images/apply/icon1.png) no-repeat 0 -1010px; padding:0 0 0 15px;}
+
+.appReadtRight{ float:right; border:1px solid #E4E4E4; border-left:none; background:#F9F9F9; padding:15px 15px 15px 30px; background:url(../images/apply/btn.png) no-repeat -331px -252px #F9F9F9;}
+
+.appRBtnBox{ text-align:right;}
+.appReadyBtn{ display:inline-block; width:180px; height:53px; line-height:53px; text-align:center; font-size:24px; font-weight:bolder; border:none; cursor:pointer; background:url(../images/apply/btn.png) no-repeat 0px -771px; color:#FFF;}
+.appReadyBtn:hover{ background:url(../images/apply/btn.png) no-repeat 0px -825px;}
+
+
+
+/*申请 购物车 头部*/
+.HeadText{ color:#FFF;}
+.HeadText span{ color:#FFF;}
+
+.HeadText777{ color:#555;}
+.HeadText777 span{ color:#777;}
+
+.BuyStep{ float:right;}
+.BuyStep li{ float:left; width:210px; padding:0 0 0 40px; height:40px; line-height:40px; font-size:14px;}
+.BuyStep li.BuyStepAc a{ color:#FFF;}
+.BuyStep1{ background:url(../images/apply/regStep.png) no-repeat 0 0;}
+.BuyStep2{ background:url(../images/apply/regStep.png) no-repeat 0 -40px;}
+.BuyStep3{ background:url(../images/apply/regStep.png) no-repeat 0 -80px;}
+
+.BuyMain{ width:1024px; height:auto; margin:50px auto; overflow:hidden; clear:both;}
+.BuyMain .alert{font-size:20px;}
+.BuyMain .alert li{line-height:20px;margin:15px 0px;font-size:13px;}
+.BuyMain .alert li span{font-style:italic;display:block;margin:10px 0;}
+
+/*申请 购物车 3*/
+.BuyCost{ font-size:18px; padding:10px 20px; border:1px solid #DFEFF7; background:#F6FCFF;}
+.BuyCost span{ font-weight:bolder; color:#F00;}
+
+.BuyCostTabBox{ margin:20px 0; padding:10px 20px 20px; background:#F6F6F6;}
+.BuyCostTab{ width:100%; color:#777;}
+.BuyCostTab th{ font-weight:normal; text-align:left; padding:10px 0; vertical-align:top; border-bottom:1px solid #E4E4E4;}
+.BuyCostTab td{ padding:10px 0; vertical-align:top;} 
+.BuyCostTab td a{ display:block;} 
+.BuyCostTab td span{ display:block;} 
+
+.BuyCostText{ font-size:14px;}
+
+.BuyAppList{ padding:0 0 20px; margin:0 0 20px; overflow:hidden; clear:both; background:url(../images/apply/BuyTbg1.png) no-repeat 0 100%;}
+.BuyAppList span{ float:left; font-size:24px;}
+.BuyAppList a{ float:right; display:inline-block; padding:0 20px; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:5px; border:1px solid #E9E9E9; background:#E9E9E9; color:#0277c4;}
+
+/*申请 购物车 2*/
+.BuyPlease{ overflow:hidden; clear:both;}
+.BuyPlease span{ float:left; font-size:24px;}
+.BuyPlease a{ float:right; display:inline-block; padding:0 20px; color:#84c225; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:5px; border:1px solid #E9E9E9; background:#E9E9E9;}
+
+.BuyMenu{ margin:20px 0 0; overflow:hidden; clear:both; background:#84c225; height:40px;}
+.BuyMenu ul{ overflow:hidden; clear:both; display:inline-block; padding:0 0 0 2px; border-right:1px solid #84c225;}
+.BuyMenu ul li{ float:left; cursor:pointer; height:40px; line-height:40px; font-size:18px; color:#FFF; border-right:1px solid #95d039; border-left:1px solid #57ac1d;}
+.BuyMenu ul li span{ display:block; margin:2px 0px 0; padding:0 30px;}
+.BuyMenu ul li.none{ border-left:none;}
+.BuyMenu ul li.BuySelect span{ background:#FFF; color:#84c225;}
+
+.BuyBox{ padding:20px 20px 30px; border:2px solid #E4E4E4; border-top:none;}
+
+.BuyBox .BuyCost{ background:none; border:none;}
+.BuyBankBox{ padding:20px 0; border-top:2px solid #E4E4E4;}
+.BuyBank{ overflow:hidden; clear:both; padding:20px; line-height:30px; border:2px solid #FFF; border-bottom:1px solid #e4e4e4;}
+.BuyBank:hover{ border:2px solid #0072C7; background:#F6FCFF;}
+.BuyBankImg{ float:left; margin:0 10px 0 0;}
+.BuyBox input{float:left;}
+.BuyBox img{float:left;}
+.BuyBox .intro{float:left;width:700px;}
+.BuyBox .intro img{float:none;height:21px;}
+.BuyBox .intro .info{float:none;}
+.BuyBox .intro .info span{display:block;font-weight:normal;}
+.BuyWU .submitbut{font-size:30px;height:50px;line-height:30px;}
+.BuyBtn{ display:inline-block; height:30px; line-height:30px; padding:0 20px; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:5px;}
+
+.BuyPayBtn{ float:right; margin:20px 0; font-size:24px; height:40px; line-height:40px; background:#E82312; border:1px solid #E82312; color:#FFF;}
+.BuyPayBtn:hover{ background:#F12C1B; border:1px solid #F12C1B; color:#FFF; text-decoration:none;}
+
+.BuyPayInv{ float:right; margin:25px 0 25px 10px; font-size:18px; background:#F6F6F6; border:1px solid #E4E4E4; color:#0277c4;}
+.BuyPayInv:hover{ background:#F6F6F6; border:1px solid #E4E4E4; color:#0277c4; text-decoration:none;}
+
+.BuyXing{ padding:0 0px 30px; color:#777; border-bottom:1px solid #E4E4E4;}
+.BuyXing dt{font-weight:bold;line-height:30px;height:30px;}
+.BuyXing dd{padding:5px 0 0 20px;line-height:20px;min-height:20px;margin-bottom:10px;}
+
+.BuyAcc{ margin:20px 0; padding:20px; background:#F6F6F6;}
+.BuyAcc h2{ font-size:18px; margin:0 0 10px;}
+.BuyAccTab{} 
+.BuyAccTab th{ font-weight:normal; text-align:left; padding:0 10px 0 0; vertical-align:top;line-height:30px;}
+.BuyAccTab td{ color:#777; vertical-align:top;line-height:30px;} 
+
+
+
+#applicationFormValid .form-item {
+	padding: 5px;
+	margin: 2px 0;
+}
+
+#applicationFormValid .form-item-error {
+	background: #FDE2E9;
+}
+.apply_msg_r .msg_con {
+	padding: 35px 40px;
+}
+
+.Label {
+	clear: both;
+	height: 54px;
+}
+
+.Label span.lable_input {
+	height: 35px;
+	margin-right: 10px;
+	width: 185px;
+}
+
+.Label span {
+	display: block;
+	float: left;
+}
+
+.Cu_form {
+	overflow: hidden;
+	position: relative;
+	width: auto;
+}
+
+.Cu_form .form_Prompt {
+	color: #999999;
+	height: auto;
+	left: 9px;
+	line-height: 28px;
+	position: absolute;
+	top: 5px;
+	width: auto;
+	z-index: 120;
+}
+
+.Label span.lable_input input {
+	border: 1px solid #D8D8D8;
+	height: 25px;
+	width: 171px;
+}
+
+.Cu_form .form_txt {
+	border: 1px solid #D8D8D8;
+	float: left;
+	height: 28px;
+	line-height: 28px;
+	position: absolute;
+	top: 0;
+	width: 170px;
+	z-index: 100;
+}
+
+.Label span.lable_input {
+	height: 35px;
+	margin-right: 10px;
+	width: 185px;
+}
+
+.Label span.lable_input input {
+	border: 1px solid #D8D8D8;
+	height: 25px;
+	width: 171px;
+}
+
+.Label span.icon_bg {
+	height: 34px;
+	width: 34px;
+}
+
+.Label span {
+	display: block;
+	float: left;
+}
+.float_nav{width:237px;float:left;z-index:99;}
+span.error {
+    background: url("/resource/new/images/personal/unchecked.gif") no-repeat scroll 4px center rgba(0, 0, 0, 0);
+    color: #FF0000;
+    overflow: hidden;
+    padding-left: 19px;
+}
+span.success {
+    background: url("/resource/new/images/personal/checked.gif") no-repeat scroll 4px center rgba(0, 0, 0, 0);
+    color: #FF0000;
+    overflow: hidden;
+    padding-left: 19px;
+}
+input.error{
+	border: 1px solid #FF0000;
+}
+input.FormCheck{ height:40px; margin-right:10px;}
+input[type="radio"]{ height:13px; margin-left:10px;}
+input[type="checkbox"]{ height:13px; margin-left:10px;}
+
+/*add zmm*/
+#undefined-sticky-wrapper .appNav{width:206px;}
+#undefined-sticky-wrapper .appNav li a{line-height:16px;border:none;}

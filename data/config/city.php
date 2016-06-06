@@ -1,0 +1,2 @@
+<?php
+return array ('1' => 'Hangzhou Train Station', '2' => 'Hangzhou East Train Station', '3' => 'Hangzhou Xiaoshan Airport','4' => 'Shanghai Pudong International Airport--Public Transportation','5' => 'Shanghai Pudong International Airport--School Car' ); ?>

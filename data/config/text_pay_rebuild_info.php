@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => array ( 'id' => '26', 'budgetid' => '175', 'tuitionid' => '131', 'userid' => '3684', 'name' => 'huanhu', 'majorid' => '93', 'squadid' => '96', 'passport' => 'A123123123', 'email' => '2851951852@qq.com', 'term' => '4', 'money' => '102', 'remark' => '123123', 'state' => '0', 'paytime' => NULL, 'createtime' => '1421981158', 'adminid' => '10', ), ); ?>

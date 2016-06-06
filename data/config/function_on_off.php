@@ -1,0 +1,2 @@
+<?php
+return array ( 'apply' => 'yes', 'accommaction' => 'yes', 'pickup' => 'yes', 'search' => 'yes', 'putup' => 'yes', 'activity' => 'yes', 'online_apply' => 'yes', 'acc_pledge' => 'yes', 'online_acc' => 'yes', 'tuition' => 'yes', 'card' => 'yes', 'rebuild' => 'yes', 'enrol_rebuild' => 'yes', 'electric_charge' => 'yes', 'book' => 'yes', 'online_pickup' => 'yes', ); ?>

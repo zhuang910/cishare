@@ -1,0 +1,138 @@
+.pic {overflow:hidden;zoom:1;line-height:24px;}
+.pic li {float:left;text-align:center;padding:0px;margin:0px;}
+.pic span {display: block;overflow:hidden;zoom:1;border:1px solid #EFEFEF;text-align:center; margin:auto; }
+.pic span a {display:table-cell;vertical-align:middle;*display:block; overflow:hidden;zoom:1;}
+.pic span a:hover { background-color:#e8eff6}
+.pic li b {line-height:24px;overflow:hidden;zoom:1;font-size:12px;}
+
+.button { margin-left:15px; padding: 6px 8px; cursor: pointer; display: inline-block; text-align: center; line-height: 1; *padding:4px 10px; *height:2em; letter-spacing:2px; font-family: Tahoma, Arial/9!important; width:auto; overflow:visible; *width:1; color: #333; border: solid 1px #999; border-radius: 5px; background: #DDD; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); background: linear-gradient(top, #FFF, #DDD); background: -moz-linear-gradient(top, #FFF, #DDD); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#DDD)); text-shadow: 0px 1px 1px rgba(255, 255, 255, 1); box-shadow: 0 1px 0 rgba(255, 255, 255, .7),  0 -1px 0 rgba(0, 0, 0, .09); -moz-transition:-moz-box-shadow linear .2s; -webkit-transition: -webkit-box-shadow linear .2s; transition: box-shadow linear .2s; }
+ 
+.input-focus{background: #FFF; border-color:#afcee6;font-size:12px;}
+
+#box_title , .box_thumb {display:block;zoom:1;position:relative;overflow:visible;}
+.thumb_box {position:absolute;overflow:hidden;border:1px solid #EEEEEE;background:#FFF;top:-1px;height:140px;padding:8px 25px;left:450px;text-align:center;}
+.thumb_box img {width:135px;height:110px;}
+.thumb_box input {margin-top:5px;}
+
+.colorimg {width:16px;height:16px;float:left;border:1px solid #ccc;margin-top:3px;}
+.style_bold {margin-top:0px;border:none;}
+
+.radio-label{ border-top:1px solid #e4e2e2; border-left:1px solid #e4e2e2}
+.radio-label td{ border-right:1px solid #e4e2e2; border-bottom:1px solid #e4e2e2;background:#f6f9fd}
+#thumb_aid_box {display:none;}
+.hidden {display:none;}
+body fieldset{border:1px solid #D8D8D8; padding:10px;}
+body fieldset legend{padding:3px 8px;font-weight:700;border:1px solid #D8D8D8;background-color: #F9F9F9;}
+body fieldset.blue{border:1px solid #dce3ed}
+body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; background:none; border:none}
+.attachment_show {float:left;color:#000;text-align:center;width:99px;}
+.attachment_show li {line-height:180%;word-wrap:break-word;word-break:break-all;}
+.attachment_show img {padding:3px;margin-bottom:3px;width:60px;height:60px;background:#fff;border:1px solid #dfdfdf;}
+.progressWrapper {
+	overflow: hidden;zoom:1;
+}
+
+.progressContainer {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;zoom:1;
+}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;zoom:1;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 200px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;zoom:1;
+	height:26px; line-height:26px; float:left;
+}
+.progresshidden {
+	display:none;
+}
+.progressBarComplete
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	width: 200px;
+	font-size: 12px;;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap; float:left; height:24px; line-height:24px
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 16px;
+	width: 16px;
+	background-image: url(images/cross.png);
+	background-repeat: no-repeat;
+	background-position:0 4px ;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position:0 bottom ;
+}
+
+
+#divMovieContainer , #divStatus {clear:both;}
+
+#uploadbut,.selectbut {float:left;background: url(images/swfBnt.png) no-repeat; margin-right:10px;width:75px; height:28px; line-height:28px;font-weight:700; color:#fff}
+#uploadbut{ vertical-align:middle;border:none;cursor: hand;!important;cursor: pointer }
+.selectbut{background-position: left bottom;}
+
+/*列表样式*/
+.img{border:1px solid #eee;text-align:center;overflow:hidden;background:#fff}
+.img a{display:table-cell;vertical-align:middle;text-align:center;*display:block;}
+
+.attachment-list{overflow:hidden;zoom:1;padding:0;margin:0;}
+.attachment-list li{width:24%;*width:24.5%; overflow:hidden; padding:6px 0; float:left}
+.attachment-list .img{width:104px;height:90px;overflow:hidden; margin:auto;}
+.attachment-list .img {text-align:center;overflow:hidden; background:#fff; border:none; position:relative}
+.attachment-list .img a{display:table-cell;vertical-align:middle;text-align:center;*display:block;border:1px solid #eee;width:101px; height:88px;*font-size:67px;}
+.attachment-list .img a:hover,.attachment-list .img a.on{border-color:#d0def1; background:#f3f6fa}
+.attachment-list .img a.off .icon{background: url(images/off.png) no-repeat; height:17px;bottom:5px;*bottom:3px; right:3px; z-index:100; position: absolute; overflow:hidden; width:98px;}
+.attachment-list .img a.on .icon{background: url(images/msg_bg.png) no-repeat left -249px;width:16px; height:18px;bottom:4px;*bottom:2px; right:3px; z-index:100; position: absolute; overflow:hidden}
+
+
+#fsUploadProgress {padding:4px;margin:0;}
+
+
+
+
+
+

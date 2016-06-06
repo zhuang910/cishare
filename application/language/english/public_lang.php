@@ -1,0 +1,565 @@
+<?php
+$lang ['login'] = 'Login';
+$lang ['register'] = 'Register';
+$lang ['submit'] = 'Submit';
+$lang ['loginout'] = 'Log Off';
+$lang ['online_apply'] = 'Apply Now';
+$lang ['look_detail'] = 'See Details';
+$lang ['baoming'] = 'More Details';
+$lang ['zixun'] = 'I Want to Consult';
+$lang ['apply_sel'] = 'Check Application Process';
+$lang ['enroll_pro'] = 'Program List';
+$lang ['link_method'] = 'Contact Us';
+$lang ['to_ninght'] = 'Working Hours: GMT+8 Time Zone, Monday - Friday, 8:30 AM - 16:00 PM';
+$lang ['msjt_address'] = 'Location';
+$lang ['msjt_time'] = 'Time';
+$lang ['msjt_wqhg'] = 'More Details';
+$lang ['allcourse'] = 'All Programs';
+//
+$lang ['course_opentime'] = 'School Opening Time';
+$lang ['course_schooling'] = 'Length of Program';
+$lang ['course_tuition'] = 'Tuition Fee';
+$lang ['teacher_style'] = 'Teacher Style';
+$lang ['teacher_info'] = 'Teacher Introduction';
+$lang ['good_course'] = 'Elaborate Course';
+$lang ['teaching'] = 'Teaching Essay';
+// 2014 08 28
+$lang ['student_eval'] = 'Student Assessment';
+$lang ['doeval'] = 'Review';
+$lang ['score1'] = 'Interesting';
+$lang ['score2'] = 'Attitude';
+$lang ['score3'] = 'Apearance';
+$lang ['score4'] = 'Content';
+$lang ['evaluate_title'] = 'Title';
+$lang ['evaluate_content'] = 'Suggestion';
+$lang ['evaluate_evaluate'] = 'Assessment';
+$lang ['evaluate_title_null'] = 'Title Cannot be Blank';
+$lang ['evaluate_content_null'] = 'Suggestion Cannot be Blank';
+$lang ['evaluate_evaluate_null'] = 'Assessment Cannot be Blank';
+$lang ['evaluate_wz'] = 'Please Evaluate the Full Version';
+$lang ['evaluate_error'] = 'Evaluation Failed';
+$lang ['evaluate_success'] = 'Evaluation Success';
+$lang ['scoreall'] = 'Total Points';
+$lang ['no_data'] = 'No Data';
+$lang ['click_more'] = 'Click to Load More';
+$lang ['more_share'] = 'More Sharing';
+$lang ['new_share'] = 'Latest Sharing';
+$lang ['download_fail'] = 'Loading Failed';
+$lang ['search_content'] = 'Please Enter the Content u Want to Search';
+$lang ['search_1'] = 'Your Current Searching Keywords';
+$lang ['search_2'] = 'Results for';
+$lang ['search_3'] = 'Sorry, Your Current Searching Keywords';
+$lang ['search_4'] = 'No Results Found';
+$lang ['apply_prev'] = 'Prev';
+$lang ['apply_next'] = 'Next';
+$lang ['apply_save'] = 'Save';
+$lang ['apply_check'] = 'You Can Only Submit This Application, When All the Statues Change to be "Completed"';
+$lang ['hi'] = 'Hello';
+
+$lang ['quickly_jump'] = 'Jump to';
+$lang ['news_events'] = 'News&Events';
+$lang ['hot_course'] = 'Popular Programs';
+$lang ['why_CUCAS'] = 'Why Choose CUCAS';
+$lang ['student_server'] = 'Student Service';
+$lang ['detail'] = 'Details';
+$lang ['more'] = 'More';
+$lang ['course_display'] = 'Program Display';
+$lang ['continue_college'] = 'School of Continuing Education';
+
+$lang ['data_college'] = 'Digital Campus';
+$lang ['email'] = 'Email';
+$lang ['login_flag'] = 'Email / Passport No.';
+$lang ['password'] = 'Password';
+$lang ['repassword'] = 'Confirm password';
+$lang ['old_password'] = 'Old Password';
+$lang ['password_error'] = 'Old password is incorrect';
+$lang ['password_equal'] = 'Confirmation password must match.';
+$lang ['nationally'] = 'Nationality';
+$lang ['interest'] = 'Preference';
+$lang ['how_to_know'] = 'How to know about CUCAS';
+$lang ['forget_password'] = 'Forgot password?';
+$lang ['name'] = 'Program Title';
+$lang ['degree'] = 'Qualification Awarded';
+$lang ['program_length'] = 'Duration';
+$lang ['opening'] = 'Starting Date';
+$lang ['deadline'] = 'Application Deadline';
+$lang ['tuition'] = 'Tuition Fee';
+$lang ['registration_fee'] = 'Application Fee';
+$lang ['language'] = 'Teaching Language';
+$lang ['education'] = 'Academic Requirement';
+$lang ['course_bright_spot'] = 'Program Highlights';
+$lang ['info'] = 'Program Description';
+$lang ['requirements'] = 'Admission Requirements';
+$lang ['no_return'] = 'Non-refundable';
+$lang ['week'] = 'Week';
+$lang ['month'] = 'Month';
+$lang ['year'] = 'Year';
+$lang ['semester '] = 'Semester';
+$lang ['associate'] = 'Associate';
+$lang ['bachelor'] = 'Undergraduate';
+$lang ['master'] = 'Postgraduate';
+$lang ['high_school'] = 'High school education at least';
+$lang ['construction'] = "Content of construction";
+$lang ['constructions'] = "The content is under construction, <a href='/'>click here to</a> return to the home page";
+$lang ['sex_0'] = 'Not Selected';
+$lang ['sex_1'] = 'Male';
+$lang ['sex_2'] = 'Female';
+$lang ['interest_0'] = 'What type of program would you prefer?';
+$lang ['interest_22'] = 'Long-term Programs';
+$lang ['interest_23'] = 'Short-term Programs';
+$lang ['interest_24'] = 'Summer/Winter Vacation Programs';
+$lang ['interest_25'] = 'Summer Camp/Winter Camp';
+$lang ['interest_26'] = 'Business Chinese';
+$lang ['interest_27'] = 'Chinese Translation';
+$lang ['interest_28'] = 'HSK Training Programs';
+$lang ['interest_29'] = 'Group Programs';
+$lang ['inquiries_0'] = 'How did you hear about CUCAS?';
+$lang ['inquiries_1'] = 'CUCAS';
+$lang ['inquiries_2'] = 'Facebook';
+$lang ['inquiries_3'] = 'Twitter';
+$lang ['inquiries_4'] = 'HSk Official Site';
+$lang ['inquiries_5'] = 'Friends';
+$lang ['inquiries_6'] = 'Bing';
+$lang ['inquiries_7'] = 'Google';
+$lang ['inquiries_8'] = 'Other';
+$lang ['email'] = 'Email';
+$lang ['password'] = 'Password';
+$lang ['repassowrd'] = 'Confirm Password';
+$lang ['code'] = 'Verification Code';
+$lang ['code_empty'] = 'Verification code cannot be empty.';
+$lang ['code_error'] = 'Verification code is incorrect.';
+$lang ['email_empty'] = 'Email address cannot be empty.';
+$lang ['email_empty_flag'] = 'Email address or Passport No. cannot be empty.';
+$lang ['email_error'] = 'Email address is invalid.';
+$lang ['email_exist'] = 'Email address already existed.';
+$lang ['password_empty'] = 'Password cannot be empty.';
+$lang ['password_length'] = 'Password should be at least 6 characters.';
+$lang ['repassowrd_empty'] = 'Confirmation password cannot be empty.';
+$lang ['repassowrd_length'] = 'Confirmation password should be at least 6 characters.';
+$lang ['nationality_empty'] = 'Nationality cannot be empty.';
+$lang ['interest_empty'] = 'Preference cannot be empty.';
+$lang ['interest_empty'] = 'Methods of how to know cannot be empty.';
+$lang ['reg_success'] = 'Registration done.';
+$lang ['reg_fail'] = 'Registration failed.';
+
+$lang ['login_error'] = 'Email address or Passport No. or Pass password is incorrect.';
+$lang ['login_success'] = 'Login Success';
+$lang ['auto_login'] = 'Auto Sign In';
+
+$lang ['nationality'] = 'Your Nationality';
+$lang ['reg'] = 'Sign Up';
+$lang ['code_nosee'] = 'Change';
+$lang ['pub_introduction'] = 'Introduction';
+$lang ['pub_more_recommend_teacher'] = 'More Professionals';
+$lang ['pub_more_recommend_students'] = 'More Star Students';
+$lang ['unit_Week'] = 'Week';
+$lang ['unit_Month'] = 'Month';
+$lang ['unit_Semester'] = 'Semester';
+$lang ['unit_Year'] = 'Year';
+$lang ['link_official_site'] = "CUCAS Official Site";
+$lang ['link_hanban'] = "Hanban";
+$lang ['flexible'] = "Flexible";
+$lang ['degree_Associate'] = "Associate";
+$lang ['degree_Bachelor'] = "Bachelor";
+$lang ['degree_Master'] = "Master";
+$lang ['degree_Doctoral'] = "Doctoral";
+$lang ['degree_Non-Degree'] = "Non-Degree";
+$lang ['language_Chinese'] = "Chinese";
+$lang ['language_English'] = "English";
+$lang ['education_Associate'] = "Associate";
+$lang ['education_Bachelor'] = "Bachelor";
+$lang ['education_Master'] = "Master";
+$lang ['education_High School Graduate'] = "High School Graduate";
+
+$lang ['personal_info'] = 'Personal Information';
+$lang ['personal_base'] = 'Basic Information';
+$lang ['personal_extend'] = 'Extended Information';
+
+$lang ['update_success'] = 'Succeeded';
+$lang ['update_error'] = 'Failed';
+
+$lang ['excellent'] = 'Excellent';
+$lang ['good'] = 'Good';
+$lang ['fair'] = 'Fair';
+$lang ['beginning'] = 'Beginning';
+
+$lang ['status_1'] = 'General';
+$lang ['status_2 '] = 'Advanced';
+
+$lang ['edit_password'] = 'Edit Password';
+$lang ['edit_photo'] = 'Edit Photo';
+
+$lang ['course_deadline'] = 'Application deadline has passed';
+$lang ['course_applycourse'] = 'Programs below still open for application：';
+$lang ['go_back_course'] = 'Back to program list';
+$lang ['come_back'] = 'Back';
+$lang ['apply_1'] = 'Start';
+$lang ['apply_2'] = 'Application Form';
+$lang ['apply_3'] = 'Upload Materials';
+$lang ['apply_4'] = 'Make Payment';
+$lang ['apply_5'] = 'Submit Application';
+$lang ['apply_prev'] = 'Previous';
+$lang ['apply_next'] = 'Next';
+
+$lang ['pj_success'] = 'Receipt submitted. We will complete inspection within 1 working day.';
+
+$lang ['user_apply_state'] = 'Status';
+$lang ['user_apply_operation'] = 'Action';
+$lang ['user_apply_lasttime'] = 'Last Updated';
+$lang ['user_apply_no'] = 'ID';
+$lang ['form_complated'] = 'Form completed';
+$lang ['form_uncomplated'] = 'Form incomplete';
+$lang ['material_completed'] = 'Materials completed';
+$lang ['material_uncompleted'] = 'Materials incomplete';
+$lang ['paid_uncompleted'] = 'Unpaid';
+$lang ['paid_completed'] = 'Paid';
+//
+$lang ['paid0'] = 'Unpaid';
+$lang ['paid1'] = 'Paid';
+$lang ['paid2'] = 'Payment Failed';
+$lang ['paid3'] = 'Payment to be confirmed';
+$lang ['continue'] = 'Continue';
+
+$lang ['paid_course'] = 'Program';
+$lang ['paid_fee'] = 'Application Fee';
+$lang ['paid_state'] = ' Payment Status';
+$lang ['paid_total'] = 'Total';
+
+$lang ['user_submit_error'] = 'Documents incomplete or unpaid';
+
+$lang ['pickup_no'] = 'No.';
+$lang ['pickup_userinfo'] = 'Personal Info.';
+$lang ['pickup_info'] = 'Flight Info.';
+$lang ['book_info'] = 'Booking Details';
+$lang ['pickup_state'] = 'Status';
+$lang ['pickup_title'] = 'Book Airport Pick-up Service';
+$lang ['myacc_title'] = 'Booking';
+$lang ['pickup_city'] = 'Destination';
+$lang ['pickup_bustype1'] = 'Public Transportation';
+$lang ['pickup_bustype2'] = 'School Car';
+$lang ['arrivetime'] = 'Arrival Time';
+$lang ['pickup_name'] = 'Name';
+$lang ['pickup_linkinfo'] = 'Contact Person';
+$lang ['pickup_email'] = 'Email';
+$lang ['pickup_nationality'] = 'Nationality';
+$lang ['pickup_sex'] = 'Sex';
+$lang ['pickup_sex1'] = 'Male';
+$lang ['pickup_sex2'] = 'Female';
+$lang ['pickup_numbers'] = 'Passenger Number';
+$lang ['pickup_flightno'] = 'Flight No.';
+$lang ['pickup_fairport'] = 'Departure Airport';
+$lang ['pickup_tairport'] = 'Arrival Airport';
+$lang ['pickup_arrivetime'] = 'Expected Arrival Time';
+$lang ['pickup_schoolname'] = 'School Name or Arrival Location';
+$lang ['pickup_remark'] = 'Remark';
+$lang ['pickup_mobile'] = 'Mobile';
+$lang ['pickup_tel'] = 'Tel';
+$lang ['pickup_pmobile'] = 'Contact Tel';
+$lang ['pickup_state0'] = 'Pending';
+$lang ['pickup_state1'] = 'Arranged';
+$lang ['pickup_state2'] = 'Failed';
+
+$lang ['my_apply'] = 'My Application';
+$lang ['my_pickup'] = 'Airport Pick-up';
+$lang ['my_accommdation'] = 'Booking Accommodation';
+$lang ['book_now'] = 'Book Now';
+
+$lang ['myacc_no'] = 'No.';
+$lang ['myacc_type'] = 'Room Type';
+$lang ['myacc_stype'] = 'Student Type';
+$lang ['myacc_time'] = 'Check In Time';
+$lang ['myacc_state'] = 'Status';
+
+$lang ['myacc_stype'] = 'Student Type';
+$lang ['myacc_stype1'] = 'Short-term student';
+$lang ['myacc_stype2'] = 'Long-term student';
+$lang ['myacc_time'] = 'Planned Residence Duration';
+$lang ['myacc_select'] = 'Select Room Type';
+
+$lang ['personal_center'] = 'Settings';
+$lang ['personal_password'] = 'Change Password';
+$lang ['personal_photo'] = 'Change Photo';
+
+$lang ['update_photo_empay'] = 'Please upload your photo';
+$lang ['personal_delete'] = 'Remove';
+$lang ['personal_accept'] = 'Accepted';
+$lang ['personal_admission'] = 'Admission Package Deliveried';
+$lang ['personal_CUCAS'] = 'My CUCAS';
+
+$lang ['my_incomplete'] = 'Incomplete';
+$lang ['my_accepted'] = 'Accepted';
+$lang ['my_admission'] = 'Track Process of Admission Letter ';
+$lang ['my_pending'] = 'Pending';
+$lang ['my_all'] = 'All';
+
+$lang ['study_CUCAS'] = 'Why Study In CUCAS?';
+$lang ['change_code'] = 'Click to change verification code';
+
+$lang ['user_exist'] = 'User does not exist!';
+$lang ['edit_p1'] = 'We have sent you a new password link to';
+$lang ['edit_p2'] = 'Please';
+$lang ['edit_p3'] = 'click here';
+$lang ['edit_p4'] = 'to login to your email and follow the link to reset your password.';
+$lang ['apply_permission'] = ' Your documents are under verification by CUCAS now, please be patient. We will inform you the application result as soon as possible.';
+$lang ['apply_return'] = 'Back to My Application';
+
+$lang ['address_tel'] = 'Tel';
+$lang ['address_building'] = 'Door Number';
+$lang ['address_street'] = 'Street';
+$lang ['address_city'] = 'City';
+$lang ['address_country'] = 'Country';
+$lang ['address_postcode'] = 'Postcode';
+$lang ['address_address'] = 'Address';
+
+$lang ['user_title'] = 'You are applying';
+
+$lang ['materials_mist'] = 'Materials List';
+$lang ['application_form'] = 'Application Form';
+$lang ['issubmit_title'] = 'Application procedure is unfinished, submission is unavailable now.';
+
+$lang ['notice'] = 'Notice';
+$lang ['notice_1'] = 'To avoid delays in admission, please upload each document according to the description in the left column.';
+$lang ['notice_2'] = 'Please make sure the scanned or photographied documents are clearly readable and can be printed.';
+$lang ['notice_3'] = 'The system only accepts the following format RAR, PDF, JPG, PNG, GIF,DOC,DOCX.';
+$lang ['notice_4'] = 'Single upload file size can not exceed 5M.';
+$lang ['scholarship_introduce'] = 'Apply scholarship in CUCAS, relieve your worry about study';
+$lang ['scholarship_introduce_101'] = 'Get financial support from alumnu scholarship';
+$lang ['scholarship_introduce_100'] = 'Financial assistance from enterprise';
+$lang ['scholarship_introduce_99'] = 'Scholarship provided by groups';
+$lang ['scholarship_introduce_98'] = 'CUCAS official scholarship';
+$lang ['scholarship_introduce_97'] = 'Scholarship programs of Chinese government';
+$lang ['scholarship_introduce_96'] = 'Scholarship Introduction';
+$lang ['pages_introduce'] = 'CUCAS‘s great school services';
+$lang ['pages_introduce_45'] = 'School services for international students';
+$lang ['pages_introduce_46'] = 'Tips to know before application';
+$lang ['pages_introduce_52'] = 'Coming to China? CUCAS will pick you up in the airport';
+$lang ['pages_introduce_57'] = 'Get more materials for your study';
+$lang ['pages_introduce_61'] = 'Quick tips for living in CUCAS';
+$lang ['pages_introduce_66'] = 'Contact CUCAS for further help';
+$lang ['about_introduce'] = 'Get to know every details of CUCAS';
+$lang ['about_introduce_74'] = 'Review of the history of CUCAS';
+$lang ['about_introduce_76'] = 'Know the advantages of CUCAS';
+$lang ['about_introduce_77'] = 'International cooperation of CUCAS';
+$lang ['about_introduce_78'] = 'Training base of CUCAS';
+$lang ['about_introduce_80'] = 'International cooperation of CUCAS';
+$lang ['about_introduce_81'] = 'Check latest activities of your alumnus';
+$lang ['schoollife_introduce'] = 'View shining moment of CUCAS and know the life in CUCAS better.';
+$lang ['schoollife_introduce_32'] = 'Check excellent teaching facilities of CUCAS';
+$lang ['schoollife_introduce_35'] = 'See the life of international students in CUCAS';
+$lang ['schoollife_introduce_39'] = 'Great activities for international students in CUCAS';
+$lang ['schoollife_introduce_88'] = 'School Life Introduction';
+$lang ['schoollife_introduce_89'] = 'School Life Introduction';
+$lang ['schoollife_introduce_90'] = 'School Life Introduction';
+$lang ['accommodation_introduce'] = 'Live in CUCAS, be closer to knowledge';
+$lang ['accommodation_introduce_accommodation_introduce'] = 'Check photos to know dormitory in CUCAS better';
+$lang ['accommodation_introduce_accommodation_book'] = 'Book accommodation in CUCAS online';
+
+$lang ['course_content0'] = 'Program Highlights';
+$lang ['course_content1'] = 'Admission Requirements';
+$lang ['course_content2'] = 'Main Courses';
+$lang ['course_content3'] = 'Training Objectives';
+$lang ['course_content4'] = 'Practice Link';
+$lang ['course_content5'] = 'Employment Direction';
+$lang ['course_content6'] = 'How to Apply';
+
+$lang ['accommodation_login_book'] = 'Accommodation Booking';
+$lang ['myacc_sc'] = 'Stay';
+$lang ['myacc_day'] = 'Day';
+$lang ['myacc_yes'] = 'Yes';
+$lang ['myacc_no'] = 'No';
+$lang ['myacc_tj'] = 'Whether to Accept Swap';
+$lang ['accommodation_building_introduce'] = 'Introduction';
+$lang ['accommodation_building_type'] = 'Room Type';
+$lang ['accommodation_building_price'] = 'Price';
+$lang ['accommodation_building_info'] = 'Introduction';
+$lang ['accommodation_building_count'] = 'Count';
+$lang ['accommodation_building_action'] = 'Operate';
+$lang ['footer_ba'] = '京ICP备05067991号|  Feedback:service@cucas.cn';
+$lang ['footer_copy'] = 'Copyright  2015 ZUST Power By: CUCAS';
+$lang ['education_none'] = 'NONE';
+$lang ['no_img'] = 'No Image';
+$lang ['no_video'] = 'No Video';
+$lang ['site_map'] = 'Quick Links';
+$lang ['accommodation_student'] = 'You need to apply a program and get admission in CUCAS before booking accommodation.';
+$lang ['item_require'] = 'All blanks must be filled';
+$lang ['overdue'] = 'The program is overdue';
+$lang ['user_chfirstname'] = 'Chinese Last Name';
+$lang ['user_chlastname'] = 'Chinese First Name';
+$lang ['user_chname'] = 'Chinese Name';
+$lang ['user_firstname'] = 'English Last Name';
+$lang ['user_lastname'] = 'English First Name';
+$lang ['user_enname'] = 'English Name';
+$lang ['user_mobile'] = 'Mobile Phone Number';
+$lang ['user_tel'] = 'Phone number';
+$lang ['user_passport'] = 'Passport No.';
+$lang ['user_age'] = 'Age';
+$lang ['user_sex'] = 'Gender';
+$lang ['user_birthplace'] = 'Place of Born';
+$lang ['user_birthday'] = 'Date of Born';
+$lang ['user_marital'] = 'Marital Status';
+$lang ['user_religion'] = 'Religion';
+
+$lang ['accommodation_info'] = 'Building Info';
+$lang ['accommodation_book_info'] = 'Booking Info';
+$lang ['accommodation_state'] = 'Status';
+$lang ['myacc_camp'] = 'Campus';
+$lang ['myacc_building'] = 'Building';
+
+$lang ['myacc_state_1'] = 'Did not pay';
+$lang ['myacc_state_2'] = 'processing';
+$lang ['myacc_state_3'] = 'Reservation success';
+$lang ['myacc_state_4'] = 'Booking failure';
+$lang ['myacc_state_5'] = 'Focus';
+$lang ['myacc_state_6'] = 'Have been stay';
+$lang ['myacc_state_7'] = 'Have left';
+
+$lang ['turr'] = ' Per Semester';
+$lang ['fscg'] = 'Sent successfully';
+$lang ['fssb'] = 'Sent Failed';
+$lang ['news_detail'] = 'Details';
+$lang ['keywords'] = 'Star';
+$lang ['editphoto'] = 'Upload Photo';
+$lang ['editpassword'] = 'Reset Password';
+$lang ['editinfo'] = 'Edit Profile';
+$lang ['message_site'] = 'Internal message';
+$lang ['power_by'] = 'Powerd by: CUCAS';
+$lang ['motx'] = 'Current Photo';
+$lang ['djsctp'] = 'Click to upload photo';
+$lang ['i_evalutate'] = 'I Want to Evaluate';
+$lang ['item_require'] = 'All blanks must be filled';
+$lang ['gongxi'] = 'Congratulations!';
+$lang ['yjhcg'] = 'Activation Succeeded!';
+$lang ['fhgrzx'] = 'Continue';
+$lang ['yzyxdhc'] = 'Advantages of email-registration';
+$lang ['email_advantage'] = 'Safe, Reliable, Convenient';
+$lang ['ljyz'] = 'Verify Now';
+$lang ['zyj_1'] = 'More than 80% users chose ';
+$lang ['zyj_2'] = 'verify email now';
+$lang ['zyj_3'] = 'The system has';
+$lang ['zyj_4'] = 'sent an verify email to your email address, please login to your email and click the link to verify your email address';
+$lang ['zyj_5'] = '. If you did not receive the email in 2 minutes, you can ';
+$lang ['ljdl'] = 'Check Now';
+$lang ['zhmm'] = 'Reset your password';
+$lang ['qsrzcyx'] = 'Please enter your registered email.';
+$lang ['djzhmm'] = 'Reset Password';
+$lang ['sorry'] = 'Sorry';
+$lang ['no_exist'] = 'Not exist';
+$lang ['fpassword_1'] = 'The link for reset password has been sent to your email address:';
+$lang ['fpassword_2'] = ', please click the link in it to reset password.';
+$lang ['fpassword_3'] = 'The system has';
+
+$lang ['fpassword_4'] = 'sent an email to your email address';
+$lang ['fpassword_9'] = ' please login to your email and click the link to reset your password.If you did not receive the email in 2 minutes, you can';
+$lang ['fpassword_5'] = 'Resent the email';
+$lang ['fpassword_6'] = 'Please enter your password';
+$lang ['fpassword_7'] = 'Please confirm your password';
+$lang ['fpassword_8'] = 'Submit';
+$lang ['accommodation_login_tips'] = 'You need to login before booking accommodation.';
+$lang ['accommodation_login_content'] = 'You need to apply a program and get admission in CUCAS before booking accommodation.';
+$lang ['accommodation_login_notice'] = 'Tips';
+$lang ['room_price'] = 'per / day';
+$lang ['room_danwei'] = 'per / day';
+$lang ['root_type_1'] = 'Single room';
+$lang ['root_type_2'] = 'Double room';
+$lang ['root_type_3'] = 'Single room';
+$lang ['root_type_4'] = 'Standard room ';
+$lang ['dqsqxxw'] = 'You application information is:';
+$lang ['dqsqxxw_edit'] = 'Edit';
+$lang ['tsxx'] = 'Notice';
+$lang ['zyj_homepage'] = 'HomePage';
+$lang ['zyj_pre'] = 'Prev';
+$lang ['zyj_next'] = 'Next';
+$lang ['zyj_last'] = 'LastPage';
+$lang ['zyj_tiao'] = 'articles in total';
+$lang ['zyj_g'] = '';
+$lang ['steps'] = '
+<h4  class="mmsh4">There will be 4 main sections for you to complete online application:</h4>
+
+     <p class="mmsp"><label>1：</label> Fill in online application form</p>
+    <p class="mmsp"><label>2：</label> Upload required application materials</p>
+  <p class="mmsp"><label>3：</label> Make payment of application fee</p>
+   <p class="mmsp"><label> 4:</label> Submit your application to the university</p>
+';
+$lang ['steps1'] = '
+<h4  class="mmsh4">There will be 4 main sections for you to complete online application:</h4>
+
+     <p class="mmsp"><label>1：</label> Fill in online application form</p>
+    <p class="mmsp"><label>2：</label> Upload required application materials</p>
+   <p class="mmsp"><label> 4:</label> Submit your application to the university</p>
+';
+$lang ['my_CUCAS'] = 'My CUCAS';
+$lang ['apply_tips'] = 'You have not apply for any speciaties yet .Please apply for a specialty first and then book an accommodation. Would you like to apply now？';
+$lang ['del_confirm'] = 'Are you sure to delete it?';
+$lang ['welcome'] = 'Welcome!';
+$lang ['submiting'] = 'Submitting..';
+$lang ['2m'] = 'The size of image needs to be less than 2M';
+$lang ['error_gs'] = 'Invalid image format，please choose another one';
+$lang ['del_success'] = 'Delete Success';
+$lang ['page_number'] = 'Start Applying';
+$lang ['apply_submit_1'] = 'You cannot submit the application before you complete the steps below:';
+$lang ['returnapply'] = 'Back to my applications';
+$lang ['zzsh'] = 'Your application is under review, please wait patiently, we will notify you the result as soon as possible.';
+$lang['apply_schlorship'] = 'Apply Scholarship';
+$lang['schlorship_title'] = 'Scholarship Name';
+$lang['schlorship_count'] = 'Number of Scholarships';
+$lang['schlorship_money'] = 'Scholarship Amount';
+$lang['schlorship_endtime'] = 'Deadline';
+$lang['schlorship_info'] = 'Scholarship Introduction';
+$lang['schlorship_content'] = 'Scholarship Application Requirements';
+$lang['nopermissions'] = 'CUCAS has to verify your information, documents modification unavailable now. Please try again later. ';
+$lang['dqzy'] = 'The program you are applying is:';
+$lang['deposit_state'] = 'Deposit Payment';
+$lang['deposit_state_1'] = 'Deposit already paid ';
+$lang['deposit_state_2'] = 'Deposit Payment Failed';
+$lang['deposit_state_3'] = 'Deposit Payment Confirming';
+$lang['deposit_state_0'] = '';
+$lang['apply_method'] = 'Please select the type of method of paying tuition fees.';
+$lang['apply_self'] = 'Self-paying';
+$lang['applystate0'] = 'Incomplete';
+$lang['applystate1'] = 'Waiting for Results';
+$lang['applystate2'] = 'Pending';
+$lang['applystate3'] = 'Waiting for Results';
+$lang['applystate4'] = 'Rejected';
+$lang['applystate5'] = 'Transferred';
+$lang['applystate6'] = 'Pre Accepted';
+$lang['applystate7'] = 'Accepted';
+$lang['applystate8'] = 'Enrollment';
+$lang['applystate9'] = 'Over';
+$lang['schlorship_available'] = 'Available';
+$lang['schlorship_unavailable'] = 'Unavailable';
+$lang['schlorship_name'] = 'Schlorship';
+$lang['look_less'] = 'Less';
+$lang['confirmaddress'] = 'Confirm Your Mailing Address';
+$lang['pagesend_status_1'] = 'Offer Deliveried';
+$lang['e_offer_status'] = 'E-Offer Deliveried';
+$lang['no_accommodeation'] = 'The school has not activated this function yet.';
+$lang['tuition_history'] = 'Payment Record';
+$lang['tuition_term'] = 'Semester';
+$lang['tuition_money'] = 'Amount';
+$lang['tuition_time'] = 'Time of Payment';
+$lang['tuition_state'] = 'Payment Status';
+$lang['editemail'] = 'Update your email address';
+$lang['qsryx'] = 'Please input email address';
+$lang['no_email'] = 'No email';
+$lang['process'] = 'Processing';
+$lang['jiangxuejinkeyi']='Freshman Scholarship can be applied after you complete the program application. ';
+
+//支付弹框
+$lang['pay_tips'] = '<div class="TCBox TCWidthB" id="ispayok" style="display:none">
+			<div class="TCTitle TCTitleC">Pending for payment confirmation...</div>
+			<p class="setzf">In the pop-up payment page to complete your payment, the system will receive the payment information sent by the third party payment platform. </p>
+			<p class="setzf">If you encounter any problem during payment, please click the button "Incomplete" and contact   international123@126.com or call  +86-571-85070143 
+		. </p>
+			<p class="setzf">If you finish your payment, please click the button "Complete".</p>
+			<table class="TCBtnTab TCBtnTabA">
+				<tbody><tr>
+					<td>
+					<div style="margin-top: 20px; cursor: pointer;" class="apply_btn2 float_l"><a class="White" onclick="pay_in(this);" type="button">Incomplete</a></div>
+					<div style="margin: 20px 0 0 20px" class=" jian_btn float_l"><a href="javascript:;" onclick="pay_ok(this);" class="White">Complete</a></div>
+				</td>
+				</tr>
+				</tbody>
+			</table>
+	</div>';
+$lang['uploadpay']='Upload Materials';
+$lang['ispriority'] = '精品课程';

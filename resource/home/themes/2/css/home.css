@@ -1,0 +1,80 @@
+@charset "utf-8";
+/*banner*/
+.banner{ background:#ccc; height:430px;}
+.banner_l{ width:16.3%; height:430px; background:#ccc; position:relative; overflow:hidden;}
+.mask{ background:#000; position:absolute; top:0; left:0; filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;z-index:100; height:430px; width:100%;}
+.banner_c{ width:1120px; background:#999; height:430px;}
+.banner_pic{ width:741px; height:430px; background:#777;}
+.banner_font{ width:379px; height:430px; background: url(../images/home/home_icon.png) repeat-x 0 0px; position:relative;}
+.banner_font dl dt{ font-size:34px; line-height:34px; text-transform:uppercase; color:#fff;text-shadow: 1px 1px 1px #555; padding:70px 30px 10px 30px;}
+.banner_font dl dd.font_bannerr{ color:#fff; font-size:16px; line-height:24px; padding:0 30px 40px 30px;text-shadow: 1px 1px 1px #555;}
+.banner_font dl dd a{ background:#fff; padding:10px 15px 10px 15px; text-transform:uppercase; color:#014587; margin-left:30px; font-size:16px;border-radius:5px;}
+.banner_font dl dd a em{ background: url(../images/home/home_banner_icon.png) no-repeat right; padding-right:15px;}
+.banner_btn{ width:113px; height:37px; position:absolute; right:20px; bottom:30px;}
+.left_btn{ width:37px; height:37px; background: url(../images/home/home_icon.png) no-repeat 0 -430px; cursor:pointer;}
+.play{ width:37px; height:37px; background: url(../images/home/home_icon.png) no-repeat -38px -430px; margin-left:1px; cursor:pointer;}
+.right_btn{ width:37px; height:37px; background: url(../images/home/home_icon.png) no-repeat -76px -430px; cursor:pointer;}
+.left_btn:hover{background: url(../images/home/home_icon.png) no-repeat 0 -468px;}
+.play:hover{ background: url(../images/home/home_icon.png) no-repeat -38px -468px; margin-left:1px;}
+.right_btn:hover{ background: url(../images/home/home_icon.png) no-repeat -76px -468px;}
+
+/*con1*/
+.con1{ position:relative; position:relative;}
+.school_pic{ height:338px;}
+.school_box{ height:336px; width:278.4px; background:#fff; border:1px solid #e0e0e0; border-right:none;}
+.school_box:hover{ background:#f6f6f6;}
+.school_box a:hover{ text-decoration:none;}
+.school_box dt{ background:#ccc; height:173px;}
+.school_box dd.box_title{ font-size:18px; text-transform:uppercase; padding:20px 20px 5px 20px; color:#333;}
+.school_box dd.box_font{ font-size:12px; padding:0 20px 0 20px; color:#555;}
+.school_box dd.box_link{ font-size:12px; padding:10px 20px 0 20px;}
+.home_bg{ width:259px; height:697px; position:absolute; right:-259px; top:54px; background:url(../images/home/home_bg.png) no-repeat;}
+.con3_left_btn{ width:32px; height:32px; background:url(../images/home/home_icon.png) no-repeat 0 -506px; position:absolute; left:-43px; top:230px; cursor:pointer;}
+.con3_left_btn:hover{ background:url(../images/home/home_icon.png) no-repeat 0 -539px;}
+.con3_right_btn{ background:url(../images/home/home_icon.png) no-repeat -33px -506px; width:32px; height:32px; position:absolute; right:-43px; top:230px; z-index:999; cursor:pointer;}
+.con3_right_btn:hover{ background: url(../images/home/home_icon.png) no-repeat -33px -539px; }
+
+/*con2*/
+.con2{ height:328px;/*可以去掉的高度*/}
+.con2_left{ width:572px;}
+.con2_right{ width:478px;}
+.home_news dl{ padding-top:20px;}
+.home_news dl dt{ width:54px; height:59px; border:1px solid #014587;}
+.home_news dl dt span{ display:block; text-align:center; line-height:37px; height:37px; font-size:30px;}
+.home_news dl dt em{ font-size:12px; color:#fff; height:22px; line-height:22px; background:#014587; display:block; text-align:center;}
+.home_news dl dd{ color:#555; width:490px; padding-left:15px;}
+.home_news dl dd:hover{ color:#014587;}
+.home_news dl dd em{ font-size:12px; font-style: italic; color:#777; padding-top:5px; display:block;}
+.home_box{ margin-top:20px;}
+.home_box ul li.boxpic1{ float:left; width:118px; height:118px; background:#eee url(../images/home/icon_home.png) no-repeat center; position:relative; margin:0 2px 2px 0;}
+.home_box ul li.boxpic1 span{ background:#014587; color:#fff; text-align:center; padding:35px 20px 0 20px; display:block; position:absolute; top:0; left:0; height:83px; font-size:18px; line-height:22px; display:none;}
+.home_box ul li.boxpic1:hover span{ display:block;}
+
+
+/*con3*/
+.con3{ height:299px;}
+.c3_1{ width:587px; margin-right:5px; background:#ccc; height:299px;}
+.left_c3pic{ width:239px; background:#a88b60; height:299px;}
+.left_c3pic dl{ color:#fff; padding:40px 30px 30px 30px;}
+.left_c3pic dl dt{ font-size:30px; line-height:30px;}
+.left_c3pic dl dd{ padding-top:10px; font-size:16px; line-height:22px;}
+.left_c3pic dl dd a{ color:#fff; text-decoration:underline; text-transform:uppercase;}
+.left_c3pic dl dd a:hover{ text-decoration:none;}
+.right_c3font{ width:348px; height:299px; position:relative; cursor:pointer}
+.right_c3font span{ background:url(../images/public/global.png) no-repeat 0 -776px; height:49px; width:67px; position:absolute; right:12px; bottom:10px; display:block;;}
+.right_c3font:hover span{ background:url(../images/public/global.png) no-repeat -68px -776px;}
+
+.c3_2{ width:359px; height:299px; background:#ccc; margin-right:5px;}
+.c32_pic{ width:359px;  height:169px;}
+.c32_font{ width:319px; height:90px; background:#4c7a6f; padding:20px;}
+dl.con3_box_font{ color:#fff;}
+dl.con3_box_font dt{ font-size:30px; line-height:30px;}
+dl.con3_box_font dd{ font-size:16px; padding-top:10px;}
+dl.con3_box_font dd a{ color:#fff; text-decoration: underline; text-transform: uppercase;}
+dl.con3_box_font dd a:hover{ text-decoration:none;}
+.c3_3{ width:358px; background:#ccc; height:299px; margin-right:5px;}
+.c33_f{ height:92px; background:#8a9045; width:318px; padding:20px;}
+.c33_p{ height:167px; width:358px;}
+.c3_4{ width:344px; background:#ccc; height:299px;}
+.c34_p{ height:165px; width:344px;}
+.c34_f{ height:94px;width:304px; background:#c16622; padding:20px;}

@@ -1,0 +1,2 @@
+<?php
+return array ( 'defult' => array ( 'protocol' => 'smtp', 'smtp_host' => 'smtp.c2.corpease.net', 'smtp_port' => '25', 'smtp_user' => 'service@cucas.cn', 'smtp_pass' => 'cucas_s-e-r-v-i-c-e', 'mailtype' => 'html', ), ); ?>

@@ -1,0 +1,2 @@
+<?php
+return array ( 'id' => '131', 'order_id' => '177', 'budgetid' => NULL, 'nowterm' => '4', 'userid' => '3684', 'number' => 'F123811790113570', 'ordernumber' => NULL, 'tuition' => '1203', 'danwei' => NULL, 'name' => 'sun', 'email' => '2851951852@qq.com', 'nationality' => '0', 'mobile' => '', 'tel' => '9', 'passport' => 'A123123123', 'paystate' => '1', 'paytime' => '1421981324', 'paytype' => '1', 'isproof' => '0', 'createtime' => '1421981179', 'remark' => '', 'lasttime' => '1421981324', 'adminid' => '0', ); ?>
