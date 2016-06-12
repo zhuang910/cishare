@@ -89,12 +89,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
+	'dsn'	=> 'mysql:host=127.0.0.1;dbname=enjoy_share',
+	'hostname' => '',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'enjoy_share',
-	'dbdriver' => 'mysql',
+	'database' => '',
+	'dbdriver' => 'pdo',
 	'dbprefix' => 'es_',
 	'pconnect' => FALSE,
 	'db_debug' => TRUE,

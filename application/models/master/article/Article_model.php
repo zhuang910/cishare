@@ -2,13 +2,13 @@
 if (! defined ( 'BASEPATH' ))
 	exit ( 'No direct script access allowed' );
 /**
- * 用户管理
+ * 文章管理
  *
- * @author junjiezhang
+ * @author zhuangqianlin
  *        
  */
-class Notice_Model extends CI_Model {
-	const PPT = 'notice_info';
+class Article_Model extends CI_Model {
+	const PPT = 'article';
 	
 	/**
 	 * 构造函数
@@ -41,7 +41,7 @@ class Notice_Model extends CI_Model {
 	 *        	排序
 	 * @author z.junjie 2014-6-28
 	 */
-	function get_ppt($where = null, $limit = 0, $offset = 0, $orderby = 'orderby desc') {
+	function getList($where = null, $limit = 0, $offset = 0, $orderby = 'article_id desc') {
 		if (! empty ( $where )) {
 			$this->db->where ( $where, NULL, false );
 		}

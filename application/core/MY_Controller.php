@@ -55,10 +55,10 @@ class CUCAS_Ext extends CI_Controller {
 		$this->root = $this->uri->segment ( 1 );
 		$this->module = $this->uri->rsegment ( 1 );
 		$this->method = $this->uri->rsegment ( 2 );
-		
+
 		// 获取目录路径
 		$this->zjjp = HINDEX . MASTER . mb_strcut ( $this->uri->uri_string (), 0, strpos ( $this->uri->uri_string (), $this->module ) );
-		
+
 		define ( 'IS_AJAX', $this->input->is_ajax_request () );
 		
 		$this->load->vars ( 'zjjp', $this->zjjp );

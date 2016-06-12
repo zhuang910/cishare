@@ -1,32 +1,24 @@
 <?php
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 /**
- * PPT管理
+ * 文章管理
  *
- * @author junjiezhang
+ * @author zhuangqianlin
  *        
  */
-class Notice extends Master_Basic {
-	
-	/**
-	 * PPT管理
-	 *
-	 * @var array
-	 */
+class Article extends Master_Basic {
 	
 	/**
 	 * 构造函数
 	 */
 	function __construct() {
 		parent::__construct ();
-		$this->view = 'master/notice/';
-		$this->load->model ( $this->view . 'notice_model' );
+		$this->view = 'master/article/';
+		$this->load->model ( $this->view . 'article_model' );
 	}
 	
 	/**
-	 * 首页
-	 * 管理ppt
-	 * ppt 列表
+	 * 列表
 	 */
 	function index() {
 		if ($this->input->is_ajax_request () === true) {
@@ -40,7 +32,7 @@ class Notice extends Master_Basic {
 				$offset = intval ( $_POST ['iDisplayStart'] );
 				$limit = intval ( $_POST ['iDisplayLength'] );
 			}
-			$where = 'id > 0' . " AND site_language = '{$_SESSION['language']}'";
+			$where = 'article_id > 0';
 			
 			$like = array ();
 			
@@ -48,15 +40,11 @@ class Notice extends Master_Basic {
 			if (! empty ( $sSearch )) {
 				$where .= "
 				AND (
-				id LIKE '%{$sSearch}%'
+				article_id LIKE '%{$sSearch}%'
 				OR
 				title LIKE '%{$sSearch}%'
 				OR
-				orderby LIKE '%{$sSearch}%'
-				OR
-				state LIKE '%{$sSearch}%'
-				OR
-				FROM_UNIXTIME(`createtime`,'%Y-%m-%d') LIKE '%{$sSearch}%'
+				FROM_UNIXTIME(`add_time`,'%Y-%m-%d') LIKE '%{$sSearch}%'
 		
 				)
 				";
@@ -64,29 +52,17 @@ class Notice extends Master_Basic {
 			
 			$sSearch_0 = mysql_real_escape_string ( $this->input->post ( 'sSearch_0' ) );
 			if (! empty ( $sSearch_0 )) {
-				$where .= " AND id LIKE '%{$sSearch_0}%' ";
+				$where .= " AND article_id LIKE '%{$sSearch_0}%' ";
 			}
 			
 			$sSearch_1 = mysql_real_escape_string ( $this->input->post ( 'sSearch_1' ) );
 			if (! empty ( $sSearch_1 )) {
 				$where .= " AND title LIKE '%{$sSearch_1}%' ";
 			}
-			$sSearch_2 = mysql_real_escape_string ( $this->input->post ( 'sSearch_2' ) );
-			if (! empty ( $sSearch_2 )) {
-				$where .= " AND orderby LIKE '%{$sSearch_2}%' ";
-			}
-			
-			$sSearch_3 = mysql_real_escape_string ( $this->input->post ( 'sSearch_3' ) );
-			if (! empty ( $sSearch_3 )) {
-				if ($sSearch_3 == - 1) {
-					$sSearch_3 = 0;
-				}
-				$where .= " AND state = {$sSearch_3}  ";
-			}
 			
 			$sSearch_4 = mysql_real_escape_string ( $this->input->post ( 'sSearch_4' ) );
 			if (! empty ( $sSearch_4 )) {
-				$where .= " AND FROM_UNIXTIME(`createtime`,'%Y-%m-%d') LIKE '%{$sSearch_4}%' ";
+				$where .= " AND FROM_UNIXTIME(`add_time`,'%Y-%m-%d') LIKE '%{$sSearch_4}%' ";
 			}
             // 排序
             $orderby = null;
@@ -100,32 +76,31 @@ class Notice extends Master_Basic {
 
 			// 输出
 			$output ['sEcho'] = intval ( $_POST ['sEcho'] );
-			$output ['iTotalRecords'] = $output ['iTotalDisplayRecords'] = $this->notice_model->count_ppt ( $where );
-			$output ['aaData'] = $this->notice_model->get_ppt ( $where, $limit, $offset, $orderby );
-			
+			$output ['iTotalRecords'] = $output ['iTotalDisplayRecords'] = $this->article_model->count_ppt ( $where );
+			$output ['aaData'] = $this->article_model->getList ( $where, $limit, $offset, $orderby );
+
 			foreach ( $output ['aaData'] as $item ) {
-				$item->createtime = ! empty ( $item->createtime ) ? date ( 'Y-m-d', $item->createtime ) : '';
-				$state = $item->state;
-				$item->state = $this->_set_state ( $state );
+				$show = $item->is_show;
+				$item->show = $this->_set_state ( $show );
 				$item->operation = '
 				<div class="btn-group">
-				<a href="/master/notice/notice/edit?&_id=' . $item->id . '" class="btn btn-xs btn-info">修改</a>
+				<a href="/master/article/article/edit?&_id=' . $item->article_id . '" class="btn btn-xs btn-info">修改</a>
 			<button data-toggle="dropdown" class="btn btn-xs btn-info btn-white dropdown-toggle">
 	    更多
         <span class="ace-icon fa fa-caret-down icon-only"></span>
     </button>
     <ul class="dropdown-menu dropdown-info dropdown-menu-right">
 					';
-				if ($state == 1) {
-					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->id . ',0)">禁用</a></li>';
+				if ($show == 1) {
+					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->article_id . ',2)">隐藏</a></li>';
 				} else {
-					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->id . ',1)">启用</a></li>';
+					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->article_id . ',1)">显示</a></li>';
 				}
-				$item->operation .= '<li><a href="javascript:;" onclick="del(' . $item->id . ')">删除</a></li></ul></div>';
+				$item->operation .= '<li><a href="javascript:;" onclick="del(' . $item->article_id . ')">删除</a></li></ul></div>';
 			}
 			exit ( json_encode ( $output ) );
 		}
-		$this->_view ( 'notice_index' );
+		$this->_view ( 'article_index' );
 	}
 	
 	/**
@@ -152,10 +127,10 @@ class Notice extends Master_Basic {
 	/**
 	 * 状态
 	 */
-	function _set_state($state = 0) {
+	function _set_state($state = 1) {
 		$state_array = array (
-				'停用',
-				'启用' 
+				'1'=>'显示',
+				'2'=>'隐藏'
 		);
 		return $state_array [$state];
 	}
@@ -165,11 +140,10 @@ class Notice extends Master_Basic {
 	 */
 	private function _set_lists_field() {
 		return array (
-				'id',
+				'article_id',
 				'title',
-				'orderby',
-				'state',
-				'createtime' 
+				'is_show',
+				'add_time'
 		);
 	}
 	

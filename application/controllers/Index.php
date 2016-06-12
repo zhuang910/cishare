@@ -19,6 +19,7 @@ class Index extends Home_Basic {
 	 * 菜单
 	 */
 	function index() {
+		echo '<script>window.parent.location.href="/master/core/login";</script>';
 		$this->load->model ( 'home/news_model' );
 		
 		$this->load->library ( 'pager' ); // 调用分页类

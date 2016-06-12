@@ -7,7 +7,7 @@ $breadcrumb=<<<EOD
 	</li>
 
 	
-	<li class="active">通告管理</li>
+	<li class="active">文章管理</li>
 </ul>
 EOD;
 ?>		
@@ -21,7 +21,7 @@ EOD;
 <!-- /section:settings.box -->
 <div class="page-header">
 	<h1>
-		通告管理
+		文章管理
 	</h1>
 </div><!-- /.page-header -->
 
@@ -35,7 +35,7 @@ EOD;
 			 <div class="dataTables_borderWrap"> 
 				<div> 
 				<div class="table-header">
-			通告管理
+			文章管理
 			<a class="btn btn-primary btn-sm btn-default btn-sm" title="添加" type="button" href="/master/notice/notice/add" style="float:right;">
 					<span class="glyphicon  glyphicon-plus"></span>
 					添加
@@ -52,9 +52,7 @@ EOD;
 									ID
 								</th>
 								<th  width="400">标题</th>
-								<th  width="100">排序</th>
-								<th  width="100">状态</th>
-								<th  width="100">创建时间</th>
+								<th  width="100">是否显示</th>
 								<th width="100">操作</th>
 								
 							</tr>
@@ -62,29 +60,20 @@ EOD;
 						<thead>
 						<tr>
 							<th>
-                                <input type="text" id="ppt_id" placeholder="ID" style="width:50px;">
+                                <input type="text" id="art_id" placeholder="ID" style="width:50px;">
                             </th>
 							<th>
-                                 <input type="text" id="ppt_title" placeholder="标题" style="width:300px;">
+                                 <input type="text" id="art_title" placeholder="标题" style="width:300px;">
                             </th>
 							<th>
-                                 <input type="text" id="ppt_orderby" placeholder="排序" style="width:100px;">
-                            </th>
-							 
-							<th>
-                                <select id="ppt_state" style="width:100px;">
-								<option value="">--状态-</option>
-								<option value="1">启用</option>
-								<option value="-1">停用</option>
+                                <select id="art_show" style="width:100px;">
+								<option value="">-是否显示-</option>
+								<option value="1">显示</option>
+								<option value="2">隐藏</option>
 								</select>
-								
-                                
                             </th>
-							<th><input type="text" id="ppt_createtime" placeholder="创建时间" style="width:100px;"></th>
 							<th></th>
-							
-							
-							</tr>
+						</tr>
 						</thead>
 
 						<tbody>
@@ -112,12 +101,12 @@ EOD;
 <script src="<?=RES?>master/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	function del(id){
-		pub_alert_confirm('/master/notice/notice/del?id='+id);
+		pub_alert_confirm('/master/article/article/del?id='+id);
 	}
 </script>
 <script type="text/javascript">
-	function edit_state(id,state){
-		pub_alert_confirm('/master/notice/notice/edit_state?id='+id+'&state='+state);
+	function edit_state(id,show){
+		pub_alert_confirm('/master/article/article/edit_show?id='+id+'&show='+show);
 	}
 </script>
 <script type="text/javascript">
@@ -142,7 +131,7 @@ if($('#sample-table-2').length > 0){
             },
             "bProcessing":true,
             "bServerSide":true,
-            "sAjaxSource":'<?=$zjjp?>notice/notice/index',
+            "sAjaxSource":'<?=$zjjp?>article/article/index',
             "fnServerData":function(sSource, aoData, fnCallback){
                 $.ajax( {
                     "dataType": 'json',
@@ -153,46 +142,34 @@ if($('#sample-table-2').length > 0){
                 } );
             },
            
-            "aoColumnDefs":[{ "bSortable": false, "aTargets": [ 5 ] }],
+            "aoColumnDefs":[{ "bSortable": false, "aTargets": [ 3 ] }],
             "aaSorting" : [[0,'desc']],
             "aoColumns" : [
-                    { "mData": "id" },
+                    { "mData": "article_id" },
 					{ "mData": "title" },
-					{ "mData": "orderby" },
-					{ "mData": "state" },
-					{ "mData": "createtime" },
+					{ "mData": "show" },
 					{ "mData": "operation" }
                 ]
         });
 		
 	
-	$('#ppt_id').on( 'keyup', function () {
-            zjj_datatable_search(0,$("#ppt_id").val());
-        } );
-		
-		$('#ppt_title').on( 'keyup', function () {
-            zjj_datatable_search(1,$("#ppt_title").val());
-        } );
-		$('#ppt_orderby').on( 'keyup', function () {
-            zjj_datatable_search(2,$("#ppt_orderby").val());
-        } );
+	$('#art_id').on( 'keyup', function () {
+		zjj_datatable_search(0,$("#ppt_id").val());
+	} );
 
-        $('#ppt_state').change(function () {
-            zjj_datatable_search(3,$("#ppt_state").val());
-        } );
+	$('#art_title').on( 'keyup', function () {
+		zjj_datatable_search(1,$("#ppt_title").val());
+	} );
 
-		   $('#ppt_createtime').on( 'keyup', function () {
-            zjj_datatable_search(4,$("#ppt_createtime").val());
-        } );
-	
+	$('#art_show').change(function () {
+		zjj_datatable_search(3,$("#art_show").val());
+	} );
 
-        function zjj_datatable_search(column,val){
-            $('#sample-table-2').DataTable().column( column ).search( val,false, true).draw();
-        }
-	
+	function zjj_datatable_search(column,val){
+		$('#sample-table-2').DataTable().column( column ).search( val,false, true).draw();
+	}
+
 }
-
-
 });
 
 
