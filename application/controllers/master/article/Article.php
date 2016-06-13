@@ -15,6 +15,8 @@ class Article extends Master_Basic {
 		parent::__construct ();
 		$this->view = 'master/article/';
 		$this->load->model ( $this->view . 'article_model' );
+		$this->load->model ( $this->view . 'category_model' );
+		$this->load->model ( $this->view . 'special_model' );
 	}
 	
 	/**
@@ -45,7 +47,6 @@ class Article extends Master_Basic {
 				title LIKE '%{$sSearch}%'
 				OR
 				FROM_UNIXTIME(`add_time`,'%Y-%m-%d') LIKE '%{$sSearch}%'
-		
 				)
 				";
 			}
@@ -81,15 +82,15 @@ class Article extends Master_Basic {
 
 			foreach ( $output ['aaData'] as $item ) {
 				$show = $item->is_show;
-				$item->show = $this->_set_state ( $show );
+				$item->show = $this->_set_show ( $show );
 				$item->operation = '
 				<div class="btn-group">
-				<a href="/master/article/article/edit?&_id=' . $item->article_id . '" class="btn btn-xs btn-info">修改</a>
-			<button data-toggle="dropdown" class="btn btn-xs btn-info btn-white dropdown-toggle">
-	    更多
-        <span class="ace-icon fa fa-caret-down icon-only"></span>
-    </button>
-    <ul class="dropdown-menu dropdown-info dropdown-menu-right">
+					<a href="/master/article/article/edit?&_id=' . $item->article_id . '" class="btn btn-xs btn-info">修改</a>
+					<button data-toggle="dropdown" class="btn btn-xs btn-info btn-white dropdown-toggle">
+						更多
+						<span class="ace-icon fa fa-caret-down icon-only"></span>
+					</button>
+    				<ul class="dropdown-menu dropdown-info dropdown-menu-right">
 					';
 				if ($show == 1) {
 					$item->operation .= '<li><a href="javascript:;" onclick="edit_show(' . $item->article_id . ',2)">隐藏</a></li>';
@@ -104,51 +105,70 @@ class Article extends Master_Basic {
 	}
 	
 	/**
-	 * 编辑内容
+	 * 添加
+	 */
+	function add() {
+
+		//文章分类
+		$cats = $this->category_model->get();
+		$cat_list = array();
+		foreach ($cats as $key=>$va) {
+			$cat_list[$key]['id'] = $va->cat_id;
+			$cat_list[$key]['pId'] = $va->pid;
+			$cat_list[$key]['name'] = $va->category_name;
+		}
+
+		//文章专题
+		$special = $this->special_model->get();
+		$special_list = array();
+		foreach ($special as $skey=>$sva) {
+			$special_list[$skey]['id'] = $sva->id;
+			$special_list[$skey]['pId'] = $sva->pid;
+			$special_list[$skey]['name'] = $sva->name;
+		}
+
+		$this->_view ( 'article_add',array (
+			'cat_list' => json_encode($cat_list),
+			'special_list' => json_encode($special_list),
+		) );
+
+	}
+
+	/**
+	 * 编辑
 	 */
 	function edit() {
 		$id = intval ( trim ( $this->input->get ( '_id' ) ) );
 		if (! empty ( $id )) {
+			//文章分类
+			$cats = $this->category_model->get();
+			$cat_list = array();
+			foreach ($cats as $key=>$va) {
+				$cat_list[$key]['id'] = $va->cat_id;
+				$cat_list[$key]['pId'] = $va->pid;
+				$cat_list[$key]['name'] = $va->category_name;
+			}
+
+			//文章专题
+			$special = $this->special_model->get();
+			$special_list = array();
+			foreach ($special as $skey=>$sva) {
+				$special_list[$skey]['id'] = $sva->id;
+				$special_list[$skey]['pId'] = $sva->pid;
+				$special_list[$skey]['name'] = $sva->name;
+			}
+
 			$info = $this->article_model->get_one ( $id );
 			$this->_view ( 'article_add', array (
-					
-					'info' => $info 
+				'cat_list' => json_encode($cat_list),
+				'special_list' => json_encode($special_list),
+				'info' => $info
 			) );
 		}
 	}
-	
+
 	/**
-	 * 添加
-	 */
-	function add() {
-		$this->_view ( 'article_add' );
-	}
-	
-	/**
-	 * 状态
-	 */
-	function _set_state($state = 1) {
-		$state_array = array (
-				'1'=>'显示',
-				'2'=>'隐藏'
-		);
-		return $state_array [$state];
-	}
-	
-	/**
-	 * 设置列表字段
-	 */
-	private function _set_lists_field() {
-		return array (
-				'article_id',
-				'title',
-				'is_show',
-				'add_time'
-		);
-	}
-	
-	/**
-	 * 保存信息
+	 * 保存
 	 */
 	function save() {
 		$data = $this->input->post ();
@@ -156,20 +176,7 @@ class Article extends Master_Basic {
 			$id = $data ['id'];
 		}
 		unset ( $data ['id'] );
-		$data ['lasttime'] = time ();
-		$data ['adminid'] = $this->adminid;
-		
-		if (empty ( $data ['isjump'] )) {
-			$data ['isjump'] = 0;
-		}
-		if (! empty ( $data ['createtime'] )) {
-			$data ['createtime'] = strtotime ( $data ['createtime'] );
-		} else {
-			$data ['createtime'] = time ();
-		}
-		
-		$data ['site_language'] = $_SESSION ['language'];
-		
+
 		if (! empty ( $id )) {
 			$flag = $this->article_model->save ( $id, $data );
 		} else {
@@ -182,7 +189,7 @@ class Article extends Master_Basic {
 			ajaxReturn ( '', '', 0 );
 		}
 	}
-	
+
 	/**
 	 * 删除
 	 */
@@ -198,14 +205,25 @@ class Article extends Master_Basic {
 	}
 	
 	/**
-	 * 修改状态
+	 * 显示类型
+	 */
+	function _set_show($show = 1) {
+		$show_array = array (
+				'1'=>'显示',
+				'2'=>'隐藏'
+		);
+		return $show_array [$show];
+	}
+
+	/**
+	 * 修改显示类型
 	 */
 	function edit_show() {
 		$id = intval ( $this->input->get ( 'id' ) );
 		$show = intval ( $this->input->get ( 'show' ) );
 		if ($id) {
 			$is = $this->article_model->save ( $id, array (
-					'is_show' => $show
+				'is_show' => $show
 			) );
 			if ($is === true) {
 				ajaxReturn ( '', '更新成功', 1 );
@@ -213,4 +231,17 @@ class Article extends Master_Basic {
 		}
 		ajaxReturn ( '', '更新失败', 0 );
 	}
+	
+	/**
+	 * 设置列表字段
+	 */
+	private function _set_lists_field() {
+		return array (
+				'article_id',
+				'title',
+				'is_show',
+				'add_time'
+		);
+	}
+
 }
