@@ -8,7 +8,7 @@ if (! defined ( 'BASEPATH' ))
  *        
  */
 class Article_Model extends CI_Model {
-	const PPT = 'article';
+	const TABLE_ARTICLE = 'article';
 	
 	/**
 	 * 构造函数
@@ -26,7 +26,7 @@ class Article_Model extends CI_Model {
 		if (! empty ( $where )) {
 			$this->db->where ( $where );
 		}
-		return $this->db->from ( self::PPT )->count_all_results ();
+		return $this->db->from ( self::TABLE_ARTICLE )->count_all_results ();
 	}
 	
 	/**
@@ -49,7 +49,7 @@ class Article_Model extends CI_Model {
 			$this->db->limit ( $limit, $offset );
 		}
 		
-		return $this->db->order_by ( $orderby )->get ( self::PPT )->result ();
+		return $this->db->order_by ( $orderby )->get ( self::TABLE_ARTICLE )->result ();
 	}
 	
 	/**
@@ -64,7 +64,7 @@ class Article_Model extends CI_Model {
 				$this->db->where ( $condition ['where'] );
 			}
 			
-			return $this->db->from ( self::PPT )->count_all_results ();
+			return $this->db->from ( self::TABLE_ARTICLE )->count_all_results ();
 		}
 		return 0;
 	}
@@ -87,7 +87,7 @@ class Article_Model extends CI_Model {
 				}
 				$this->db->limit ( $condition ['limit'], $condition ["offset"] );
 			}
-			return $this->db->get ( self::PPT )->result ();
+			return $this->db->get ( self::TABLE_ARTICLE )->result ();
 		}
 		return array ();
 	}
@@ -97,9 +97,9 @@ class Article_Model extends CI_Model {
 	 */
 	function save($id = null, $data) {
 		if (! empty ( $id )) {
-			return $this->db->update ( self::PPT, $data, 'id = ' . $id );
+			return $this->db->update ( self::TABLE_ARTICLE, $data, 'article_id = ' . $id );
 		} else {
-			$this->db->insert ( self::PPT, $data );
+			$this->db->insert ( self::TABLE_ARTICLE, $data );
 			return $this->db->insert_id ();
 		}
 	}
@@ -111,7 +111,7 @@ class Article_Model extends CI_Model {
 	 */
 	function get_one($id = null) {
 		if ($id != null) {
-			return $this->db->get_where ( self::PPT, 'id = ' . $id, 1, 0 )->row ();
+			return $this->db->get_where ( self::TABLE_ARTICLE, 'article_id = ' . $id, 1, 0 )->row ();
 		}
 	}
 	
@@ -122,7 +122,7 @@ class Article_Model extends CI_Model {
 	 */
 	function delete($id = 0) {
 		if ($id) {
-			return $this->db->delete ( self::PPT, 'id = ' . $id );
+			return $this->db->delete ( self::TABLE_ARTICLE, 'article_id = ' . $id );
 		}
 	}
 }

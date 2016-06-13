@@ -36,7 +36,7 @@ EOD;
 				<div> 
 				<div class="table-header">
 			文章管理
-			<a class="btn btn-primary btn-sm btn-default btn-sm" title="添加" type="button" href="/master/notice/notice/add" style="float:right;">
+			<a class="btn btn-primary btn-sm btn-default btn-sm" title="添加" type="button" href="/master/article/article/add" style="float:right;">
 					<span class="glyphicon  glyphicon-plus"></span>
 					添加
 			</a>
@@ -105,7 +105,7 @@ EOD;
 	}
 </script>
 <script type="text/javascript">
-	function edit_state(id,show){
+	function edit_show(id,show){
 		pub_alert_confirm('/master/article/article/edit_show?id='+id+'&show='+show);
 	}
 </script>
@@ -154,15 +154,15 @@ if($('#sample-table-2').length > 0){
 		
 	
 	$('#art_id').on( 'keyup', function () {
-		zjj_datatable_search(0,$("#ppt_id").val());
+		zjj_datatable_search(0,$("#art_id").val());
 	} );
 
 	$('#art_title').on( 'keyup', function () {
-		zjj_datatable_search(1,$("#ppt_title").val());
+		zjj_datatable_search(1,$("#art_title").val());
 	} );
 
 	$('#art_show').change(function () {
-		zjj_datatable_search(3,$("#art_show").val());
+		zjj_datatable_search(2,$("#art_show").val());
 	} );
 
 	function zjj_datatable_search(column,val){

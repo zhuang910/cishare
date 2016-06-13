@@ -41,7 +41,7 @@ EOD;
 				</h3>	
 			<form class="form-horizontal" id="validation-form" method="post" action="<?=$zjjp?>notice/notice/save">
 				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">标题:</label>
+					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">标题:</label>
 					<div class="col-xs-12 col-sm-9">
 						<div class="clearfix">
 								<input type="text"  id="title" name="title" value="<?=!empty($info->title) ? $info->title : ''?>" class="col-xs-12 col-sm-5" />
@@ -50,17 +50,19 @@ EOD;
 				</div>
 				<div class="space-2"></div>
 				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">排序（倒序排列）:</label>
-					<div class="col-xs-12 col-sm-9">
-						<div class="clearfix">
-								<input type="text"  id="orderby" name="orderby" value="<?=!empty($info->orderby) ? $info->orderby : ''?>" class="col-xs-12 col-sm-5" />
-						</div>
+					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">是否显示:</label>
+					<div class="col-xs-12 col-sm-4">
+						<select id="state" class="form-control" name="is_show">
+							<option value="1" <?=!empty($info) && $info->is_show == 1?'selected':''?>>显示</option>
+							<option value="2"  <?=!empty($info) && $info->is_show == 2?'selected':''?>>隐藏</option>
+
+						</select>
 					</div>
 				</div>
 				<div class="space-2"></div>
 				
 				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">是否跳转:</label>
+					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">文章分类:</label>
 					<div class="col-xs-12 col-sm-9">
 						<div class="clearfix">
 							<input type="checkbox" name="isjump"  id="isjump" value="1" <?=!empty($info->isjump) && $info->isjump == 1?'checked':''?>>	
@@ -69,85 +71,12 @@ EOD;
 				</div>
 				<div class="space-2"></div>
 				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">跳转地址:</label>
-					<div class="col-xs-12 col-sm-9">
-						<div class="clearfix">
-								<input type="text"  id="jumpurl" name="jumpurl" value="<?=!empty($info->jumpurl) ? $info->jumpurl : ''?>" class="col-xs-12 col-sm-5" />
-						</div>
-					</div>
-				</div>
-				<div class="space-2"></div>
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">摘要(最长200个字 ):</label>
-					<div class="col-xs-12 col-sm-9">
-						<div class="clearfix">
-								<textarea name="desperation" id ="desperation"  style="width: 345px; height: 86px;"><?=!empty($info->desperation) ? $info->desperation : ''?> </textarea>
-								
-						</div>
-					</div>
-				</div>
-				<div class="space-2"></div>
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">关键字(用逗号隔开 ):</label>
-					<div class="col-xs-12 col-sm-9">
-						<div class="clearfix">
-								<textarea name="keywords" id ="keywords"  style="width: 345px; height: 86px;"><?=!empty($info->keywords) ? $info->keywords : ''?> </textarea>
-								
-						</div>
-					</div>
-				</div>
-				<div class="space-2"></div>
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">内容:</label>
+					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">内容:</label>
 					<div class="col-xs-12 col-sm-9">
 						<div class="clearfix">
 								<div style="display:none;" id="content_aid_box"></div>
 								<textarea name="content" class='content'  id="content"  boxid="content" style="width:100%;height:350px;resize: none;"><?=!empty($info) ? $info->content : ''?></textarea>
 								
-						</div>
-					</div>
-				</div>
-				<div class="space-2"></div>
-
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">上传主图:</label>
-					<div class="col-xs-12 col-sm-9">
-						<div class="clearfix">
-							<a href="javascript:swfupload('image_pic','image','文件上传',0,3,'jpeg,jpg,png,gif',3,0,yesdo,nodo)">
-								<img id="image_pic"  src="<?=!empty($info->image)?$info->image:'/resource/master/images/admin_upload_thumb.png'?>" width="135" height="113">
-							</a>
-								
-								
-						</div>
-					</div>
-				</div>
-				<div class="space-2"></div>
-				
-				
-				
-				
-				
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">状态:</label>
-					
-					<div class="col-xs-12 col-sm-4">
-						<select id="state" class="form-control" name="state">
-							<option value="1" <?=!empty($info) && $info->state == 1?'selected':''?>>启用</option>
-							<option value="0"  <?=!empty($info) && $info->state == 0?'selected':''?>>停用</option>
-							
-						</select>
-					</div>
-				</div>
-				<div class="space-2"></div>
-				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">发布时间:</label>
-
-					<div class="col-xs-12 col-sm-4">
-						<div class="input-group">
-							<input type="text" data-date-format="yyyy-mm-dd" id="createtime" class="form-control date-picker" name="createtime" value="<?=!empty($info->createtime)?date('Y-m-d',$info->createtime):date('Y-m-d',time())?>">
-							<span class="input-group-addon">
-								<i class="fa fa-calendar bigger-110"></i>
-							</span>
 						</div>
 					</div>
 				</div>

@@ -60,9 +60,9 @@ class Article extends Master_Basic {
 				$where .= " AND title LIKE '%{$sSearch_1}%' ";
 			}
 			
-			$sSearch_4 = mysql_real_escape_string ( $this->input->post ( 'sSearch_4' ) );
-			if (! empty ( $sSearch_4 )) {
-				$where .= " AND FROM_UNIXTIME(`add_time`,'%Y-%m-%d') LIKE '%{$sSearch_4}%' ";
+			$sSearch_2 = mysql_real_escape_string ( $this->input->post ( 'sSearch_2' ) );
+			if (! empty ( $sSearch_2 )) {
+				$where .= " AND is_show= {$sSearch_2} ";
 			}
             // 排序
             $orderby = null;
@@ -92,9 +92,9 @@ class Article extends Master_Basic {
     <ul class="dropdown-menu dropdown-info dropdown-menu-right">
 					';
 				if ($show == 1) {
-					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->article_id . ',2)">隐藏</a></li>';
+					$item->operation .= '<li><a href="javascript:;" onclick="edit_show(' . $item->article_id . ',2)">隐藏</a></li>';
 				} else {
-					$item->operation .= '<li><a href="javascript:;" onclick="edit_state(' . $item->article_id . ',1)">显示</a></li>';
+					$item->operation .= '<li><a href="javascript:;" onclick="edit_show(' . $item->article_id . ',1)">显示</a></li>';
 				}
 				$item->operation .= '<li><a href="javascript:;" onclick="del(' . $item->article_id . ')">删除</a></li></ul></div>';
 			}
@@ -109,8 +109,8 @@ class Article extends Master_Basic {
 	function edit() {
 		$id = intval ( trim ( $this->input->get ( '_id' ) ) );
 		if (! empty ( $id )) {
-			$info = $this->notice_model->get_one ( $id );
-			$this->_view ( 'notice_add', array (
+			$info = $this->article_model->get_one ( $id );
+			$this->_view ( 'article_add', array (
 					
 					'info' => $info 
 			) );
@@ -118,10 +118,10 @@ class Article extends Master_Basic {
 	}
 	
 	/**
-	 * 添加ppt
+	 * 添加
 	 */
 	function add() {
-		$this->_view ( 'notice_add' );
+		$this->_view ( 'article_add' );
 	}
 	
 	/**
@@ -171,10 +171,10 @@ class Article extends Master_Basic {
 		$data ['site_language'] = $_SESSION ['language'];
 		
 		if (! empty ( $id )) {
-			$flag = $this->notice_model->save ( $id, $data );
+			$flag = $this->article_model->save ( $id, $data );
 		} else {
 			$data ['createtime'] = time ();
-			$flag = $this->notice_model->save ( null, $data );
+			$flag = $this->article_model->save ( null, $data );
 		}
 		if ($flag) {
 			ajaxReturn ( '', '', 1 );
@@ -189,7 +189,7 @@ class Article extends Master_Basic {
 	function del() {
 		$id = intval ( $this->input->get ( 'id' ) );
 		if ($id) {
-			$is = $this->notice_model->delete ( $id );
+			$is = $this->article_model->delete ( $id );
 			if ($is === true) {
 				ajaxReturn ( '', '删除成功', 1 );
 			}
@@ -200,12 +200,12 @@ class Article extends Master_Basic {
 	/**
 	 * 修改状态
 	 */
-	function edit_state() {
+	function edit_show() {
 		$id = intval ( $this->input->get ( 'id' ) );
-		$state = intval ( $this->input->get ( 'state' ) );
+		$show = intval ( $this->input->get ( 'show' ) );
 		if ($id) {
-			$is = $this->notice_model->save ( $id, array (
-					'state' => $state 
+			$is = $this->article_model->save ( $id, array (
+					'is_show' => $show
 			) );
 			if ($is === true) {
 				ajaxReturn ( '', '更新成功', 1 );
