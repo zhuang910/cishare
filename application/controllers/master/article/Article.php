@@ -159,10 +159,13 @@ class Article extends Master_Basic {
 			}
 
 			$info = $this->article_model->get_one ( $id );
+			$cat_info = $this->category_model->get_one("cat_id=".$info->cat_id);
+
 			$this->_view ( 'article_add', array (
 				'cat_list' => json_encode($cat_list),
 				'special_list' => json_encode($special_list),
-				'info' => $info
+				'info' => $info,
+				'cat_name' => $cat_info->category_name
 			) );
 		}
 	}

@@ -5,8 +5,6 @@ $breadcrumb=<<<EOD
 		<i class="ace-icon fa fa-home home-icon"></i>
 		<a href="#">后台</a>
 	</li>
-
-	
 	<li class="active">文章管理</li>
 </ul>
 EOD;

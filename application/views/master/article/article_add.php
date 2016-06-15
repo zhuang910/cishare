@@ -21,6 +21,7 @@ EOD;
 <link rel="stylesheet" href="<?=RES?>master/css/datepicker.css" />
 <script src="<?=RES?>master/js/jquery.validate.min.js"></script>
 <?php $this->load->view('master/public/js_css_ueditor1_4_3_3');?>
+<?php $this->load->view('master/public/js_css_ztree');?>
 
 <!-- /section:settings.box -->
 <div class="page-header">
@@ -58,17 +59,18 @@ EOD;
 					</div>
 				</div>
 				<div class="space-2"></div>
-				
+				<?php if($info->type ==1){?>
 				<div class="form-group">
 					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">文章分类:</label>
 					<div class="col-xs-12 col-sm-9">
 						<div class="clearfix">
-							<input type="text"  id="pid_name" value="<?=!empty($info->pid_name) ? $info->pid_name : ''?>" readonly class="col-xs-12 col-sm-3" />
+							<input type="text"  id="pid_name" value="<?=!empty($cat_name) ? $cat_name : ''?>" readonly class="col-xs-12 col-sm-3" />
 							&nbsp;<label class="control-label"><a id="menuBtn" href="javascript:;" onclick="showMenu(); return false;">选择</a></label>
-							<input type="hidden"  id="pid" name="pid" value="<?=!empty($info->pid) ? $info->pid : ''?>" class="col-xs-12 col-sm-3" />
+							<input type="hidden"  id="pid" name="cat_id" value="<?=!empty($info->cat_id) ? $info->cat_id : ''?>" class="col-xs-12 col-sm-3" />
 						</div>
 					</div>
 				</div>
+				<?php }else{ }?>
 				<div class="space-2"></div>
 				<div class="form-group">
 					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">内容:</label>
@@ -80,9 +82,11 @@ EOD;
 						</div>
 					</div>
 				</div>
+				<div id="menuContent" class="menuContent" style="display:none; position: absolute;z-index:1000">
+					<ul id="treeDemo" class="ztree" style="margin-top: 10px;border: 1px solid #617775;background: #fff;margin-top:0; width:252px;"></ul>
+				</div>
 				<div class="space-2"></div>
-				<input type="hidden" name="id" value="<?=!empty($info->id)?$info->id:''?>">
-				<input type="hidden" name="columnid" value="<?=!empty($columnid)?$columnid:''?>">
+				<input type="hidden" name="id" value="<?=!empty($info->article_id)?$info->article_id:''?>">
 				<div class="space-2"></div>
 				<div class="col-md-offset-2 col-md-9">
 					<button type="submit" class="btn btn-info">
@@ -99,6 +103,7 @@ EOD;
 	</div>
 </div>
 
+
 <script src="<?=RES?>master/js/upload.js"></script>
 <!-- ace scripts -->
 <script src="/resource/master/js/ace-extra.min.js"></script>
@@ -108,6 +113,75 @@ EOD;
 <?php $this->load->view('master/public/js_ueditor1_4_3_3_create')?>
 
 <script type="text/javascript">
+	<!--
+	var setting = {
+		view: {
+			dblClickExpand: false,
+			showIcon: showIconForTree
+		},
+		data: {
+			simpleData: {
+				enable: true
+			}
+		},
+		callback: {
+			//beforeClick: beforeClick,
+			onClick: onClick
+		}
+	};
+
+	function showIconForTree(treeId, treeNode) {
+		return !treeNode.isParent;
+	};
+
+	var zNodes = <?=$cat_list?>;
+
+	function beforeClick(treeId, treeNode) {
+		var check = (treeNode && !treeNode.isParent);
+		if (!check) alert("只能选择城市...");
+		//return check;
+	}
+
+	function onClick(e, treeId, treeNode) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			nodes = zTree.getSelectedNodes(),
+			v = v_id = "";
+		nodes.sort(function compare(a,b){return a.id-b.id;});
+		for (var i=0, l=nodes.length; i<l; i++) {
+			v = nodes[i].name;
+			v_id = nodes[i].id;
+		}
+		//if (v.length > 0 ) v = v.substring(0, v.length-1);
+		var cityObj = $("#pid_name");
+		var pidObj = $("#pid");
+		cityObj.attr("value", v);
+		pidObj.attr("value", v_id);
+		hideMenu();
+	}
+
+	function showMenu() {
+		var cityObj = $("#pid_name");
+		var cityOffset = $("#pid_name").offset();
+		$("#menuContent").css({position: "absolute",'left':cityOffset.left - 198 + "px", 'top':cityOffset.top + cityObj.outerHeight() - 156 + "px"}).slideDown("fast");
+
+		$("body").bind("mousedown", onBodyDown);
+	}
+	function hideMenu() {
+		$("#menuContent").fadeOut("fast");
+		$("body").unbind("mousedown", onBodyDown);
+	}
+	function onBodyDown(event) {
+		if (!(event.target.id == "menuBtn" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
+			hideMenu();
+		}
+	}
+
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	});
+	//-->
+
+
 $(document).ready(function(){
 	$('#validation-form').validate({
 		errorElement: 'div',
