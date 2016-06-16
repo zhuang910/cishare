@@ -13,7 +13,7 @@ EOD;
 	'breadcrumb'=>$breadcrumb,
 ));?>
 <link rel="stylesheet" href="<?=RES?>master/css/jquery.dataTables.css">
- <link rel="stylesheet" href="<?=RES?>master/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="<?=RES?>master/css/jquery-ui.min.css" />
 
 
 <!-- /section:settings.box -->
@@ -88,19 +88,23 @@ EOD;
 		</div>
 	</div>
 </div>
-		
-<!-- script -->
-<!--[if lte IE 8]>
-<script src="<?=RES?>/master/js/excanvas.min.js"></script>
-<![endif]-->
-<!-- ace scripts -->
-<script src="<?=RES?>master/js/ace-extra.min.js"></script>
-<script src="<?=RES?>/master/js/ace-elements.min.js"></script>
-<script src="<?=RES?>/master/js/ace.min.js"></script>
-<script src="<?=RES?>master/js/jquery.dataTables.min.js"></script>
-<script src="<?=RES?>master/js/jquery.dataTables.bootstrap.js"></script>
+
+	<!-- script -->
+	<!--[if lte IE 8]>
+	<script src="<?=RES?>/master/js/excanvas.min.js"></script>
+	<![endif]-->
+	<!-- ace scripts -->
+	<script src="<?=RES?>master/js/ace-extra.min.js"></script>
+	<script src="<?=RES?>/master/js/ace-elements.min.js"></script>
+	<script src="<?=RES?>/master/js/ace.min.js"></script>
+	<script src="<?=RES?>master/js/jquery.dataTables.min.js"></script>
+	<script src="<?=RES?>master/js/jquery.dataTables.bootstrap.js"></script>
+	<!-- delete -->
+	<script src="<?=RES?>master/js/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="<?=RES?>master/css/ace.onpage-help.css" />
+	<script src="<?=RES?>master/js/x-editable/bootstrap-editable.min.js"></script>
+
 <!-- delete -->
-<script src="<?=RES?>master/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	function del(id){
 		pub_alert_confirm('/master/article/article/del?id='+id);
@@ -108,52 +112,86 @@ EOD;
 </script>
 <script type="text/javascript">
 	function edit_show(id,show){
-		pub_alert_confirm('/master/article/article/edit_show?id='+id+'&show='+show);
+		pub_alert_confirm('/master/article/article/edit_show?pk='+id+'&value='+show);
 	}
 </script>
 <script type="text/javascript">
 $(function(){
 if($('#sample-table-2').length > 0){
-	$("#sample-table-2").dataTable({
-            "iDisplayLength" : 25,
-            "sPaginationType": "full_numbers",
-            "oLanguage":{
-                "sSearch": "<span>搜索:</span> ",
-                "sInfo": "<span>_START_</span> - <span>_END_</span> 共 <span>_TOTAL_</span>",
-                "sLengthMenu": "_MENU_ <span>条每页</span>",
-                "oPaginate": {
-                    "sFirst" : "首页",
-                    "sLast" : "尾页",
-                    "sPrevious": " 上一页 ",
-                    "sNext":     " 下一页 "
-                },
-                "sInfoEmpty" : "没有记录",
-                "sInfoFiltered" : "",
-                "sZeroRecords" : '没有找到想匹配记录'
-            },
-            "bProcessing":true,
-            "bServerSide":true,
-            "sAjaxSource":'<?=$zjjp?>article/article/index',
-            "fnServerData":function(sSource, aoData, fnCallback){
-                $.ajax( {
-                    "dataType": 'json',
-                    "type": "POST",
-                    "url": sSource,
-                    "data": aoData,
-                    "success": fnCallback
-                } );
-            },
-           
-            "aoColumnDefs":[{ "bSortable": false, "aTargets": [ 3 ] }],
-            "aaSorting" : [[0,'desc']],
-            "aoColumns" : [
-                    { "mData": "article_id" },
-					{ "mData": "title" },
-					{ "mData": "show" },
-					{ "mData": "operation" }
-                ]
-        });
-		
+	$('#sample-table-2').each(function(){
+		var opt = {
+			"iDisplayLength" : 25,
+			"sPaginationType": "full_numbers",
+			"oLanguage":{
+				"sSearch": "<span>搜索:</span> ",
+				"sInfo": "<span>_START_</span> - <span>_END_</span> 共 <span>_TOTAL_</span>",
+				"sLengthMenu": "_MENU_ <span>条每页</span>",
+				"oPaginate": {
+					"sFirst" : "首页",
+					"sLast" : "尾页",
+					"sPrevious": " 上一页 ",
+					"sNext":     " 下一页 "
+				},
+				"sInfoEmpty" : "没有记录",
+				"sInfoFiltered" : "",
+				"sZeroRecords" : '没有找到想匹配记录'
+			}
+		};
+
+		opt.bAutoWidth=true;
+		opt.bStateSave = true;
+		if($(this).hasClass("dataTable-ajax")){
+			opt.bProcessing = true;
+			opt.bServerSide = true;
+			opt.sAjaxSource = "<?=$zjjp?>article/article/index";
+			opt.fnDrawCallback=function(){
+				$('a[upload-config="show"]').editable({
+					type:'select',
+					source: [
+						{value: 1, text: '显示'},
+						{value: 2, text: '隐藏'}
+					],
+					url: function(params) {
+						var d = new $.Deferred;
+						$.ajax({
+							type:'POST',
+							url:'/master/article/article/edit_show',
+							data:$.param(params),
+							dataType:'json',
+							success: function(r) {
+								if(r.state == 1){
+									pub_alert_success(r.info);
+									d.resolve();
+								}else{
+									return d.reject(r.info);
+								}
+							}
+						});
+						return d.promise();
+					},
+				});
+			}
+		}
+		if($(this).hasClass("basic_major")){
+			opt.bStateSave = false;
+			opt.aoColumns = [
+				{ "mData": "article_id" },
+				{ "mData": "title" },
+				{ "mData": "show" },
+				{ "mData": "operation" }
+
+			];
+			opt.aaSorting = [[1,'desc']];
+			opt.aoColumnDefs = [{ "bSortable": false, "aTargets": [3] }];
+		}
+
+		var oTable = $(this).dataTable(opt);
+		if($(this).hasClass("dataTable-columnfilter")){
+			oTable.columnFilter({
+				"sPlaceHolder" : "head:after"
+			});
+		}
+	});
 	
 	$('#art_id').on( 'keyup', function () {
 		zjj_datatable_search(0,$("#art_id").val());
@@ -172,9 +210,10 @@ if($('#sample-table-2').length > 0){
 	}
 
 }
+
+
 });
-
-
+	
 </script>
 
 <!-- end script -->

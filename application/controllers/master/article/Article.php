@@ -24,21 +24,21 @@ class Article extends Master_Basic {
 	 */
 	function index() {
 		if ($this->input->is_ajax_request () === true) {
-            $o = $this->input->post ();
+            $o = $this->input->get ();
 			// 设置查询字段
 			$fields = $this->_set_lists_field ();
 			// 翻页
 			$limit = "";
 			$offset = "";
-			if (isset ( $_POST ['iDisplayStart'] ) && $_POST ['iDisplayLength'] != '-1') {
-				$offset = intval ( $_POST ['iDisplayStart'] );
-				$limit = intval ( $_POST ['iDisplayLength'] );
+			if (isset ( $_GET ['iDisplayStart'] ) && $_GET ['iDisplayLength'] != '-1') {
+				$offset = intval ( $_GET ['iDisplayStart'] );
+				$limit = intval ( $_GET ['iDisplayLength'] );
 			}
 			$where = 'article_id > 0';
 			
 			$like = array ();
 			
-			$sSearch = mysql_real_escape_string ( $this->input->post ( 'sSearch' ) );
+			$sSearch = mysql_real_escape_string ( $this->input->get ( 'sSearch' ) );
 			if (! empty ( $sSearch )) {
 				$where .= "
 				AND (
@@ -51,38 +51,38 @@ class Article extends Master_Basic {
 				";
 			}
 			
-			$sSearch_0 = mysql_real_escape_string ( $this->input->post ( 'sSearch_0' ) );
+			$sSearch_0 = mysql_real_escape_string ( $this->input->get ( 'sSearch_0' ) );
 			if (! empty ( $sSearch_0 )) {
 				$where .= " AND article_id LIKE '%{$sSearch_0}%' ";
 			}
 			
-			$sSearch_1 = mysql_real_escape_string ( $this->input->post ( 'sSearch_1' ) );
+			$sSearch_1 = mysql_real_escape_string ( $this->input->get ( 'sSearch_1' ) );
 			if (! empty ( $sSearch_1 )) {
 				$where .= " AND title LIKE '%{$sSearch_1}%' ";
 			}
 			
-			$sSearch_2 = mysql_real_escape_string ( $this->input->post ( 'sSearch_2' ) );
+			$sSearch_2 = mysql_real_escape_string ( $this->input->get ( 'sSearch_2' ) );
 			if (! empty ( $sSearch_2 )) {
 				$where .= " AND is_show= {$sSearch_2} ";
 			}
             // 排序
             $orderby = null;
-            if (isset ( $_POST ['iSortCol_0'] )) {
-                for($i = 0; $i < intval ( $_POST ['iSortingCols'] ); $i ++) {
-                    if ($_POST ['bSortable_' . intval ( $_POST ['iSortCol_' . $i] )] == "true") {
-                        $orderby = $fields [intval ( $_POST ['iSortCol_' . $i] )] . ' ' . mysql_real_escape_string ( $_POST ['sSortDir_' . $i] );
+            if (isset ( $_GET ['iSortCol_0'] )) {
+                for($i = 0; $i < intval ( $_GET ['iSortingCols'] ); $i ++) {
+                    if ($_GET ['bSortable_' . intval ( $_GET ['iSortCol_' . $i] )] == "true") {
+                        $orderby = $fields [intval ( $_GET ['iSortCol_' . $i] )] . ' ' . mysql_real_escape_string ( $_GET ['sSortDir_' . $i] );
                     }
                 }
             }
 
 			// 输出
-			$output ['sEcho'] = intval ( $_POST ['sEcho'] );
+			$output ['sEcho'] = intval ( $_GET ['sEcho'] );
 			$output ['iTotalRecords'] = $output ['iTotalDisplayRecords'] = $this->article_model->count_ppt ( $where );
 			$output ['aaData'] = $this->article_model->getList ( $where, $limit, $offset, $orderby );
 
 			foreach ( $output ['aaData'] as $item ) {
 				$show = $item->is_show;
-				$item->show = $this->_set_show ( $show );
+				$item->show = '<a upload-config="show" data-pk="'.$item->article_id.'" data-name="show" href="javascript:;">'.$this->_set_show ( $show ).'</a>';
 				$item->operation = '
 				<div class="btn-group">
 					<a href="/master/article/article/edit?&_id=' . $item->article_id . '" class="btn btn-xs btn-info">修改</a>
@@ -229,8 +229,8 @@ class Article extends Master_Basic {
 	 * 修改显示类型
 	 */
 	function edit_show() {
-		$id = intval ( $this->input->get ( 'id' ) );
-		$show = intval ( $this->input->get ( 'show' ) );
+		$id = intval ( $this->input->post_get ( 'pk' ) );
+		$show = intval ( $this->input->post_get ( 'value' ) );
 		if ($id) {
 			$is = $this->article_model->save ( $id, array (
 				'is_show' => $show
