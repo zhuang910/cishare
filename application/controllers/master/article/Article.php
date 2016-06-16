@@ -108,6 +108,7 @@ class Article extends Master_Basic {
 	 * 添加
 	 */
 	function add() {
+		$type = $this->input->get('type');
 
 		//文章分类
 		$cats = $this->category_model->get();
@@ -128,8 +129,8 @@ class Article extends Master_Basic {
 		}
 
 		$this->_view ( 'article_add',array (
-			'cat_list' => json_encode($cat_list),
-			'special_list' => json_encode($special_list),
+			'cat_list' => $type == 1 ? json_encode($cat_list) : json_encode($special_list),
+			'type' => $type,
 		) );
 
 	}
@@ -159,13 +160,19 @@ class Article extends Master_Basic {
 			}
 
 			$info = $this->article_model->get_one ( $id );
-			$cat_info = $this->category_model->get_one("cat_id=".$info->cat_id);
+			if($info->type == 1) {
+				$cat_info = $this->category_model->get_one("cat_id=".$info->cat_id);
+				$cat_name = $cat_info->category_name;
+			}
+			if($info->type == 2) {
+				$cat_info = $this->special_model->get_one($info->cat_id);
+				$cat_name = $cat_info->name;
+			}
 
 			$this->_view ( 'article_add', array (
-				'cat_list' => json_encode($cat_list),
-				'special_list' => json_encode($special_list),
+				'cat_list' => $info->type == 1 ? json_encode($cat_list) : json_encode($special_list),
 				'info' => $info,
-				'cat_name' => $cat_info->category_name
+				'cat_name' => $cat_name
 			) );
 		}
 	}
@@ -183,7 +190,7 @@ class Article extends Master_Basic {
 		if (! empty ( $id )) {
 			$flag = $this->article_model->save ( $id, $data );
 		} else {
-			$data ['createtime'] = time ();
+			$data ['add_time'] = time ();
 			$flag = $this->article_model->save ( null, $data );
 		}
 		if ($flag) {

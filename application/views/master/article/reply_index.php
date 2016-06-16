@@ -5,7 +5,7 @@ $breadcrumb=<<<EOD
 		<i class="ace-icon fa fa-home home-icon"></i>
 		<a href="#">后台</a>
 	</li>
-	<li class="active">文章管理</li>
+	<li class="active">评论管理</li>
 </ul>
 EOD;
 ?>		
@@ -19,7 +19,7 @@ EOD;
 <!-- /section:settings.box -->
 <div class="page-header">
 	<h1>
-		文章管理
+		评论管理
 	</h1>
 </div><!-- /.page-header -->
 
@@ -33,15 +33,7 @@ EOD;
 			 <div class="dataTables_borderWrap"> 
 				<div> 
 				<div class="table-header">
-			文章管理
-			<a class="btn btn-primary btn-sm btn-default btn-sm" title="添加" type="button" href="/master/article/article/add?type=1" style="float:right;">
-					<span class="glyphicon  glyphicon-plus"></span>
-					添加文章
-			</a>
-					<a class="btn btn-primary btn-sm btn-default btn-sm" title="添加" type="button" href="/master/article/article/add?type=2" style="float:right;">
-						<span class="glyphicon  glyphicon-plus"></span>
-						添加专题文章
-					</a>
+			评论管理
 <a type="button" title="返回上一级" class="btn btn-primary btn-sm btn-default btn-sm" href="javascript:history.back();" style="float:right;">
 					<span class="ace-icon fa fa-reply"></span>
 					返回上一级
@@ -53,26 +45,27 @@ EOD;
 								<th class="center" width="50">
 									ID
 								</th>
-								<th  width="400">标题</th>
-								<th  width="100">是否显示</th>
-								<th width="100">操作</th>
-								
+								<th  width="400">文章标题</th>
+								<th  width="50">用户</th>
+								<th  width="400">评论内容</th>
+								<th  width="100">评论时间</th>
+								<th width="50">操作</th>
 							</tr>
 						</thead>
 						<thead>
 						<tr>
 							<th>
-                                <input type="text" id="art_id" placeholder="ID" style="width:50px;">
+                                <input type="text" id="reply_id" placeholder="ID" style="width:50px;">
                             </th>
 							<th>
-                                 <input type="text" id="art_title" placeholder="标题" style="width:300px;">
+                                 <input type="text" id="title" placeholder="文章标题">
                             </th>
 							<th>
-                                <select id="art_show" style="width:100px;">
-								<option value="">-是否显示-</option>
-								<option value="1">显示</option>
-								<option value="2">隐藏</option>
-								</select>
+								<input type="text" id="user_name" placeholder="用户" style="width:100px;">
+							</th>
+							<th></th>
+							<th>
+								<input type="text" id="add_time" placeholder="评论时间">
                             </th>
 							<th></th>
 						</tr>
@@ -103,14 +96,10 @@ EOD;
 <script src="<?=RES?>master/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	function del(id){
-		pub_alert_confirm('/master/article/article/del?id='+id);
+		pub_alert_confirm('/master/article/reply/del?id='+id);
 	}
 </script>
-<script type="text/javascript">
-	function edit_show(id,show){
-		pub_alert_confirm('/master/article/article/edit_show?id='+id+'&show='+show);
-	}
-</script>
+
 <script type="text/javascript">
 $(function(){
 if($('#sample-table-2').length > 0){
@@ -133,7 +122,7 @@ if($('#sample-table-2').length > 0){
             },
             "bProcessing":true,
             "bServerSide":true,
-            "sAjaxSource":'<?=$zjjp?>article/article/index',
+            "sAjaxSource":'<?=$zjjp?>reply/index',
             "fnServerData":function(sSource, aoData, fnCallback){
                 $.ajax( {
                     "dataType": 'json',
@@ -144,27 +133,31 @@ if($('#sample-table-2').length > 0){
                 } );
             },
            
-            "aoColumnDefs":[{ "bSortable": false, "aTargets": [ 3 ] }],
+            "aoColumnDefs":[{ "bSortable": false, "aTargets": [ 5 ] }],
             "aaSorting" : [[0,'desc']],
             "aoColumns" : [
-                    { "mData": "article_id" },
+                    { "mData": "reply_id" },
 					{ "mData": "title" },
-					{ "mData": "show" },
+					{ "mData": "user_name" },
+					{ "mData": "content" },
+					{ "mData": "add_time" },
 					{ "mData": "operation" }
                 ]
         });
 		
 	
-	$('#art_id').on( 'keyup', function () {
-		zjj_datatable_search(0,$("#art_id").val());
+	$('#reply_id').on( 'keyup', function () {
+		zjj_datatable_search(0,$("#reply_id").val());
 	} );
 
-	$('#art_title').on( 'keyup', function () {
-		zjj_datatable_search(1,$("#art_title").val());
+	$('#title').on( 'keyup', function () {
+		zjj_datatable_search(1,$("#title").val());
 	} );
-
-	$('#art_show').change(function () {
-		zjj_datatable_search(2,$("#art_show").val());
+	$('#user_name').on( 'keyup', function () {
+		zjj_datatable_search(2,$("#user_name").val());
+	} );
+	$('#add_time').on( 'keyup', function () {
+		zjj_datatable_search(3,$("#add_time").val());
 	} );
 
 	function zjj_datatable_search(column,val){
@@ -173,7 +166,6 @@ if($('#sample-table-2').length > 0){
 
 }
 });
-
 
 </script>
 

@@ -59,9 +59,8 @@ EOD;
 					</div>
 				</div>
 				<div class="space-2"></div>
-				<?php if($info->type ==1){?>
 				<div class="form-group">
-					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">文章分类:</label>
+					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name"><?= !empty($type)&&$type == 1 ? "文章分类:" : "所属专题"?></label>
 					<div class="col-xs-12 col-sm-9">
 						<div class="clearfix">
 							<input type="text"  id="pid_name" value="<?=!empty($cat_name) ? $cat_name : ''?>" readonly class="col-xs-12 col-sm-3" />
@@ -70,7 +69,6 @@ EOD;
 						</div>
 					</div>
 				</div>
-				<?php }else{ }?>
 				<div class="space-2"></div>
 				<div class="form-group">
 					<label class="control-label col-xs-12 col-sm-2 no-padding-right" for="name">内容:</label>
@@ -87,6 +85,7 @@ EOD;
 				</div>
 				<div class="space-2"></div>
 				<input type="hidden" name="id" value="<?=!empty($info->article_id)?$info->article_id:''?>">
+				<input type="hidden" name="type" value="<?=!empty($type)?$type:''?>">
 				<div class="space-2"></div>
 				<div class="col-md-offset-2 col-md-9">
 					<button type="submit" class="btn btn-info">
@@ -102,7 +101,6 @@ EOD;
 		</div>
 	</div>
 </div>
-
 
 <script src="<?=RES?>master/js/upload.js"></script>
 <!-- ace scripts -->
@@ -138,7 +136,7 @@ EOD;
 
 	function beforeClick(treeId, treeNode) {
 		var check = (treeNode && !treeNode.isParent);
-		if (!check) alert("只能选择城市...");
+		if (!check) alert("只能选择子分类...");
 		//return check;
 	}
 
@@ -181,73 +179,72 @@ EOD;
 	});
 	//-->
 
+    $(document).ready(function(){
+        $('#validation-form').validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                title: {
+                    required: true
+                },
+                is_show: 'required',
+            },
 
-$(document).ready(function(){
-	$('#validation-form').validate({
-		errorElement: 'div',
-		errorClass: 'help-block',
-		focusInvalid: false,
-		rules: {
-			title: {
-				required: true
-			},
-			is_show: 'required',
-		},
+            messages: {
+                title:{
+                    required:"请输入标题",
+                },
+                is_show: "请选择显示类型",
 
-		messages: {
-			title:{
-				required:"请输入标题",
-			},
-			is_show: "请选择显示类型",
+            },
 
-		},
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
 
-		highlight: function (e) {
-			$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
-		},
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+                $(e).remove();
+            },
 
-		success: function (e) {
-			$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
-			$(e).remove();
-		},
+            errorPlacement: function (error, element) {
+                if(element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else if(element.is('.select2')) {
+                    error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                }
+                else if(element.is('.chosen-select')) {
+                    error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                }
+                else error.insertAfter(element.parent());
+            },
+            submitHandler: function (form) {
 
-		errorPlacement: function (error, element) {
-			if(element.is(':checkbox') || element.is(':radio')) {
-				var controls = element.closest('div[class*="col-"]');
-				if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
-				else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
-			}
-			else if(element.is('.select2')) {
-				error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
-			}
-			else if(element.is('.chosen-select')) {
-				error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
-			}
-			else error.insertAfter(element.parent());
-		},
-		submitHandler: function (form) {
-
-			var data=$(form).serialize();
-			$.ajax({
-				url: $(form).attr('action'),
-				type: 'POST',
-				dataType: 'json',
-				data: data,
-			})
-			.done(function(r) {
-				if(r.state==1){
-					pub_alert_success();
-					window.location.href="/master/article/article/index";
-				}else{
-					pub_alert_error();
-				}
-			})
-			.fail(function() {
-				pub_alert_error();
-			})
-		}
-	});
-});
+                var data=$(form).serialize();
+                $.ajax({
+                    url: $(form).attr('action'),
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                })
+                .done(function(r) {
+                    if(r.state==1){
+                        pub_alert_success();
+                        window.location.href="/master/article/article/index";
+                    }else{
+                        pub_alert_error();
+                    }
+                })
+                .fail(function() {
+                    pub_alert_error();
+                })
+            }
+        });
+    });
 </script>
 
 <!-- script -->
