@@ -187,8 +187,7 @@ $form_action = $uri4 == 'edit' ? 'update' : 'insert';
 			},
 
 		},
-
-
+		
 		highlight: function (e) {
 			$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
 		},
@@ -224,7 +223,7 @@ $form_action = $uri4 == 'edit' ? 'update' : 'insert';
 				.done(function(r) {
 					if(r.state==1){
 						pub_alert_success();
-						window.location.href="/master/category/category";
+						window.location.href="/master/article/category";
 					}else{
 						pub_alert_error();
 					}

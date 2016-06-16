@@ -38,7 +38,7 @@ EOD;
 						<i class="ace-icon fa fa-reply light-green bigger-130"></i>
 					</a>
 				</h3>	
-			<form class="form-horizontal" id="validation-form" method="post" action="<?=$zjjp?>special/special/save">
+			<form class="form-horizontal" id="validation-form" method="post" action="<?=$zjjp?>special/save">
 				<div class="form-group">
 					<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">名称:</label>
 					<div class="col-xs-12 col-sm-9">
@@ -228,7 +228,7 @@ EOD;
 						.done(function(r) {
 							if(r.state==1){
 								pub_alert_success();
-								window.location.href="/master/special/special/index";
+								window.location.href="/master/article/special/index";
 							}else{
 								pub_alert_error();
 							}

@@ -131,7 +131,16 @@ class Special extends Master_Basic {
 	 * 添加
 	 */
 	function add() {
-		$this->_view ( 'special_add' );
+		$list = $this->special_model->get();
+		$list1 = array();
+		foreach ($list as $key=>$va) {
+			$list1[$key]['id'] = $va->id;
+			$list1[$key]['pId'] = $va->pid;
+			$list1[$key]['name'] = $va->name;
+		}
+		$this->_view ( 'special_add', array (
+			'list' => json_encode($list1),
+		) );
 	}
 	
 	/**
