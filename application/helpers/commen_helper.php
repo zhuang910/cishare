@@ -629,7 +629,7 @@ function build_order_no() {
  */
 function is_login() {
 	if (! (isset ( $_SESSION ['master_user_key'] ) && $_SESSION ['master_user_key'] === true)) {
-		echo '<script>window.parent.location.href="/master/core/login";</script>';
+		echo '<script>window.parent.location.href="/admin/core/login";</script>';
 		die ();
 	}
 }

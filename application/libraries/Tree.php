@@ -1,7 +1,7 @@
 <?php
 /**
  * 无限极分类
- * @author junjiezhang
+ * @author zhuangqianlin
  *
  */
 class Tree {

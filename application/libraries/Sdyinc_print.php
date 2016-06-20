@@ -53,7 +53,7 @@ class Sdyinc_print{
 
 			}
 			$str.='</div></form>';
-			return $this->CI->load->view('master/public/sdyinc_print',array(
+			return $this->CI->load->view('admin/public/sdyinc_print',array(
 					'str'=>$str,
 					'ishow'=>$ishow,
 					'mid'=>$mbid

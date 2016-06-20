@@ -5,7 +5,7 @@
 class Power {
 	public function __construct() {
 		$CI = & get_instance ();
-		$CI->load->model ( 'master/power/power_model' );
+		$CI->load->model ( 'admin/power/power_model' );
 	}
 	
 	/**
@@ -55,9 +55,9 @@ class Power {
 	 */
 	function _alert($msg, $state = 0, $sleep = 3) {
 		$CI = & get_instance ();
-		exit ( $CI->load->view ( 'master/public/alert', array (
+		exit ( $CI->load->view ( 'admin/public/alert', array (
 				'msg' => $msg,
-				'jump' => '/master/core/login',
+				'jump' => '/admin/core/login',
 				'state' => $state,
 				'sleep' => $sleep 
 		), true ) );

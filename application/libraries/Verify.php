@@ -3,7 +3,7 @@ if (! defined ( 'BASEPATH' ))
 	exit ( 'No direct script access allowed' );
 /**
  * 验证码
- * @author junjiezhang
+ * @author zhuangqianlin
  *
  */
 class Verify {

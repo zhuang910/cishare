@@ -7,7 +7,7 @@
 class Adminlog {
 	public function __construct() {
 		$CI = & get_instance ();
-		$CI->load->model ( 'master/authority/log_model' );
+		$CI->load->model ( 'admin/authority/log_model' );
 	}
 	
 	/**

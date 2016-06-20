@@ -2,11 +2,11 @@
 //$config['email']['mail_name']='世华易网'; 
 $config['email']['protocol'] = 'smtp'; 
 $config['email']['smtp_host'] = 'smtp.c2.corpease.net'; 
-$config['email']['smtp_user'] = 'service@cucas.cn';
-$config['email']['smtp_pass'] = 'cucas_s-e-r-v-i-c-e'; 
+$config['email']['smtp_user'] = 'service@share.com';
+$config['email']['smtp_pass'] = 'es_s-e-r-v-i-c-e';
 
-$config['email']['_subject'] = 'CUCAS Service Team'; 
-$config['email']['useragent'] = 'CUCAS Service Team'; 
+$config['email']['_subject'] = 'ES. Service Team';
+$config['email']['useragent'] = 'ES. Service Team';
 
 $config['email']['smtp_port'] = '25'; 
 $config['email']['smtp_timeout'] = '5';

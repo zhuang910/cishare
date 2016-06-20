@@ -48,7 +48,7 @@ if (! is_dir ( $system_path )) {
 }
 
 /*
- * ------------------------------------------------------------------- Now that we know the path, set the main path constants -------------------------------------------------------------------
+ * ------------------------------ Now that we know the path, set the main path constants -------------------------------
  */
 // The name of THIS file
 define ( 'SELF', pathinfo ( __FILE__, PATHINFO_BASENAME ) );
@@ -104,7 +104,7 @@ if (($_temp = realpath ( $view_folder )) !== FALSE) {
 define ( 'VIEWPATH', $view_folder );
 
 /*
- * -------------------------------------------------------------------- LOAD THE BOOTSTRAP FILE -------------------------------------------------------------------- And away we go...
+ * -------------------------------- LOAD THE BOOTSTRAP FILE ------------------------------------------ And away we go...
  */
 require_once BASEPATH . 'core/CodeIgniter.php';
 
